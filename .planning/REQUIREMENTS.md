@@ -115,12 +115,53 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
+| FND-01 | Phase 1 | Pending |
+| FND-02 | Phase 1 | Pending |
+| FND-03 | Phase 1 | Pending |
+| FND-04 | Phase 1 | Pending |
+| FND-05 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Pending |
+| NAV-02 | Phase 1 | Pending |
+| NAV-03 | Phase 1 | Pending |
+| NAV-04 | Phase 1 | Pending |
+| HERO-01 | Phase 1 | Pending |
+| HERO-02 | Phase 2 | Pending |
+| HERO-03 | Phase 2 | Pending |
+| SVC-01 | Phase 2 | Pending |
+| SVC-02 | Phase 3 | Pending |
+| PRICE-01 | Phase 4 | Pending |
+| PRICE-02 | Phase 4 | Pending |
+| PRICE-03 | Phase 4 | Pending |
+| PRICE-04 | Phase 4 | Pending |
+| PRICE-05 | Phase 4 | Pending |
+| GAL-01 | Phase 2 | Pending |
+| GAL-02 | Phase 4 | Pending |
+| GAL-03 | Phase 4 | Pending |
+| GAL-04 | Phase 2 | Pending |
+| GAL-05 | Phase 2 | Pending |
+| VID-01 | Phase 5 | Pending |
+| VID-02 | Phase 5 | Pending |
+| VID-03 | Phase 5 | Pending |
+| BOOK-01 | Phase 3 | Pending |
+| BOOK-02 | Phase 3 | Pending |
+| BOOK-03 | Phase 3 | Pending |
+| BOOK-04 | Phase 3 | Pending |
+| BOOK-05 | Phase 3 | Pending |
+| LOC-01 | Phase 2 | Pending |
+| LOC-02 | Phase 2 | Pending |
+| LOC-03 | Phase 2 | Pending |
+| SEO-01 | Phase 6 | Pending |
+| SEO-02 | Phase 6 | Pending |
+| SEO-03 | Phase 6 | Pending |
+| SEO-04 | Phase 6 | Pending |
+| SEO-05 | Phase 1 | Pending |
+| SEO-06 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 44 total
-- Mapped to phases: 0
-- Unmapped: 44 ⚠️
+- v1 requirements: 41 total
+- Mapped to phases: 41
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-11-12*
-*Last updated: 2026-11-12 after initial definition*
+*Last updated: 2026-11-12 after roadmap creation*
