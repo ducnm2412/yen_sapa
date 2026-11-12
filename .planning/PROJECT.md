@@ -26,6 +26,8 @@ Khách truy cập (chủ yếu trên điện thoại) thấy được không gia
 - [ ] Landing page một trang, tiếng Việt, responsive ưu tiên mobile
 - [ ] Hero ấn tượng với ảnh/video không gian spa và lời kêu gọi đặt lịch
 - [ ] Giới thiệu thương hiệu: phong cách nhẹ nhàng, tinh tế, hiện đại, thư giãn; cam kết dịch vụ
+- [ ] Mục bảng giá: giá dịch vụ, combo và thẻ thành viên (nguồn: ảnh trong `public/images/pricing/`)
+- [ ] Mục kết quả trước – sau và hình ảnh khách hàng (cần khách đồng ý)
 - [ ] Mục dịch vụ: 5 nhóm (chăm sóc da mặt chuyên sâu; điều trị mụn, thâm, nám; phục hồi & tái tạo da; trẻ hóa da; liệu trình làm đẹp & thư giãn / body)
 - [ ] Mục điểm khác biệt (USP): không gian chuyên nghiệp, liệu trình theo tình trạng da, chú trọng chất lượng, tư vấn tận tình
 - [ ] Thư viện không gian spa (ảnh) và video liệu trình (video dọc 9:16)
@@ -43,13 +45,13 @@ Khách truy cập (chủ yếu trên điện thoại) thấy được không gia
 - Gửi email / Google Sheet / Zalo tự động từ form — đã chọn "chỉ báo thành công"
 - Nhiều trang, trang chi tiết dịch vụ, blog — đã chọn landing page một trang
 - Đa ngôn ngữ — chỉ tiếng Việt
-- Bảng giá, thanh toán online, giỏ hàng — khách không yêu cầu
+- Thanh toán online, giỏ hàng — khách không yêu cầu
 - Tài khoản khách hàng / đăng nhập — không cần cho mục tiêu đặt lịch
 
 ## Context
 
 - Dự án Next.js (App Router, TypeScript, Tailwind CSS, `src/`) vừa được tạo bằng create-next-app; chưa có code riêng.
-- Media đã có sẵn và đã phân loại trong `public/images/{brand,space,services,team}` và `public/videos/` (19 ảnh, 11 video, xem `docs/MEDIA.md`).
+- Media đã có sẵn và đã phân loại trong `public/images/{brand,space,services,results,pricing,customers,team,other}` (87 ảnh) và `public/videos/` (11 video), xem `docs/MEDIA.md`.
 - Logo: chữ "YÊN – SPA + BEAUTE" (bản nền đỏ đô và bản nền cây xanh). Thương hiệu còn xuất hiện tên "Yên Skinlab" trên ảnh/video.
 - Ảnh có tông be, gỗ ấm, nhiều cây xanh — hợp với hướng thiết kế xanh lá + be.
 - Toàn bộ video là khổ dọc 9:16, một số file lớn (đến 66 MB) cần nén; `body-acupressure-lowres.mp4` có thể trùng với `body-acupressure.mp4`.
@@ -77,6 +79,7 @@ Khách truy cập (chủ yếu trên điện thoại) thấy được không gia
 | Form đặt lịch chỉ báo thành công, không lưu dữ liệu | Theo yêu cầu, chưa cần backend | — Pending |
 | Thiết kế xanh lá + be, tự nhiên | Hợp với tông cây xanh trong ảnh không gian, cảm giác thư giãn | — Pending |
 | Deploy Vercel | Chuẩn cho Next.js | — Pending |
+| Thêm mục bảng giá (2026-11-12) | Khách cung cấp 20 ảnh bảng giá/combo/thẻ thành viên | — Pending |
 
 ## Evolution
 
