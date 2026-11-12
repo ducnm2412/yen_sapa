@@ -35,6 +35,14 @@ Dọn scaffold create-next-app, dựng nền tiếng Việt + bảng màu xanh/b
 - **D-12:** Nút **Gọi** cho **chọn chi nhánh** (Q3 0899 607 279 / Phú Nhuận 0896 407 578). Phải hoạt động không cần JS → dùng `<details>`/`<summary>` hoặc popover thuần HTML, mỗi lựa chọn là `<a href="tel:+84...">`. Zalo: mặc định số Q3 0899 607 279 (chỉ số này đã xác nhận có Zalo) — nếu áp dụng chọn chi nhánh cho Zalo thì chỉ khi số 2 được xác nhận. Messenger: `https://m.me/SpabeauteYenhcm`.
 - **D-13:** "Đặt lịch" trỏ tới **khối liên hệ `#dat-lich`** ngay trên footer (gọi 2 chi nhánh, Zalo, Messenger). Phase 3 đặt form vào đúng anchor này.
 
+### Animation (Motion — phong cách luxury)
+- **D-14:** Dùng thư viện **`motion`** (`motion/react`, `LazyMotion` + `domAnimation` + `m.*`, `strict`) cho hiệu ứng chuyển động; bọc `MotionConfig reducedMotion="user"`. Áp dụng skill `.agents/skills/motion-design/SKILL.md`.
+- **D-15:** Ngôn ngữ chuyển động "luxury": chậm, mềm, tiết chế — duration ~0.8–1.2s, easing kiểu expo-out (vd. `[0.16, 1, 0.3, 1]`), không bounce/spring nảy, không xoay/scale mạnh.
+- **D-16:** Hero: ảnh nền zoom-out rất nhẹ (scale 1.08→1, ~1.6s) + chữ hiện lần lượt (stagger ~0.12s, fade + trượt lên 16–24px); có thể reveal tiêu đề theo dòng (mask). **Không** để ảnh LCP bắt đầu ở opacity 0. Parallax nhẹ cho ảnh hero khi cuộn (chỉ transform).
+- **D-17:** Header: chuyển nền trong suốt → be mượt (~0.4s). Menu mobile: mở dạng overlay fade + các mục stagger.
+- **D-18:** Thanh nút nổi: trượt lên nhẹ khi xuất hiện; nhưng **link phải có sẵn trong HTML** (hoạt động không JS), animation chỉ là trang trí.
+- **D-19:** Component dùng lại: `MotionProvider`, `Reveal` (whileInView, `viewport={{ once: true, amount: 0.2 }}`) để các phase sau dùng cho section. Chỉ animate `transform`/`opacity`. Hover/press dùng Tailwind transition.
+
 ### Claude's Discretion
 - Giữ hay bỏ `cacheComponents`/`partialPrefetching` trong `next.config.ts` (không dùng `new Date()` khi render).
 - Mã màu cụ thể, spacing, icon (lucide-react + SVG Zalo/Messenger/Facebook tự viết), hiệu ứng (motion LazyMotion, tôn trọng reduced-motion).
