@@ -96,3 +96,9 @@ Items acknowledged and carried forward from previous milestone close:
 Last session: 2026-11-12T04:23:03.380Z
 Stopped at: Phase 1 context gathered
 Resume file: .planning/phases/01-foundation-live-conversion-path/01-CONTEXT.md
+
+## Quick Tasks Completed
+
+| ID | Date | Task | Dir |
+|----|------|------|-----|
+| 261113-ebo | 2026-11-13 | Hero: nền 3 video chia 3 cột | .planning/quick/261113-ebo-hero-3-video-gioi-thieu |

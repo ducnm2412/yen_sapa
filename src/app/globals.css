@@ -1,0 +1,388 @@
+@import "tailwindcss";
+
+/* Bảng màu Yên: xanh rêu trầm + be ấm, đỏ đô chỉ làm điểm nhấn nhỏ.
+   Tương phản (WCAG AA): ink/beige-50 ≈ 13:1, muted/beige-50 ≈ 6.3:1, white/moss-700 ≈ 7.8:1, moss-800/beige-50 ≈ 10:1 */
+@theme inline {
+  --color-beige-50: #f8f3ea;
+  --color-beige-100: #f0e7d7;
+  --color-beige-200: #e4d6bd;
+  --color-beige-300: #d3bf9c;
+  --color-moss-500: #6f7d55;
+  --color-moss-600: #56653f;
+  --color-moss-700: #46553a;
+  --color-moss-800: #36422c;
+  --color-moss-950: #1c2417;
+  --color-moss-900: #263020;
+  --color-ink: #2b2a26;
+  --color-muted: #5f5a50;
+  --color-burgundy: #7a2e2e;
+  /* Vàng champagne: chỉ dùng cho ánh sáng, đường nét trang trí, hiệu ứng hover */
+  --color-gold-300: #d8c08a;
+  --color-gold-500: #b8975a;
+
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--color-beige-50);
+  color: var(--color-ink);
+}
+
+/* Thanh nút nổi: hiệu ứng bằng CSS để vẫn hiển thị khi chưa có JavaScript */
+@keyframes rise-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-rise-in {
+    animation: rise-in 0.9s var(--ease-luxe) 0.6s both;
+  }
+}
+
+/* ---------- Motion system: trạng thái chờ trước khi GSAP chạy ----------
+   Chỉ ẩn khi có JS (class .js gắn sớm trong <head>) và người dùng không giảm chuyển động.
+   Ảnh hero (LCP) không bao giờ bị ẩn. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal],
+  .js [data-hero="logo"],
+  .js [data-hero="nav"],
+  .js [data-hero="eyebrow"],
+  .js [data-hero="heading"],
+  .js [data-hero="tagline"],
+  .js [data-hero="fade"],
+  .js [data-hero="cta"] > * {
+    visibility: hidden;
+  }
+}
+
+/* Mặt nạ cho từng từ: padding đủ chỗ cho dấu tiếng Việt ở trên/dưới */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.22em 0.03em 0.12em;
+  margin: -0.22em -0.03em -0.12em;
+  vertical-align: top;
+}
+.split-inner,
+.split-char {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ---------- Micro-interaction ---------- */
+/* Nút: vệt sáng vàng lướt qua khi hover */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgb(216 192 138 / 0.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.9s var(--ease-luxe);
+  pointer-events: none;
+}
+.btn-shimmer:hover::after,
+.btn-shimmer:focus-visible::after {
+  transform: translateX(120%);
+}
+
+/* Menu: gạch chân chạy từ trái sang */
+.nav-link {
+  position: relative;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: var(--color-gold-500);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s var(--ease-luxe);
+}
+.nav-link:hover {
+  opacity: 1;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Link mũi tên trượt */
+.arrow-link .arrow {
+  transition: transform 0.5s var(--ease-luxe);
+}
+.arrow-link:hover .arrow {
+  transform: translate(3px, -3px);
+}
+.arrow-link {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.6s var(--ease-luxe);
+}
+.arrow-link:hover {
+  background-size: 100% 1px;
+}
+
+/* Thẻ: nhấc lên, viền vàng hiện dần, ánh sáng lan nhẹ */
+.service-card,
+.lift-card,
+.usp-card {
+  transition:
+    transform 0.7s var(--ease-luxe),
+    box-shadow 0.7s var(--ease-luxe);
+}
+.service-card {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 0 0 1px rgb(216 192 138 / 0.45),
+    0 24px 60px -20px rgb(216 192 138 / 0.35);
+}
+.lift-card {
+  box-shadow: 0 1px 0 rgb(43 42 38 / 0.06);
+}
+.lift-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgb(184 151 90 / 0.35),
+    0 24px 50px -24px rgb(54 66 44 / 0.35);
+}
+.usp-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-gold-500), var(--color-gold-300));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-luxe);
+}
+.usp-card:hover::before {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover,
+  .lift-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Hiệu ứng áp dụng từ docs/MOTION_EFFECTS_GUIDE.md ---------- */
+
+/* Từ nhạt trong tiêu đề */
+.word-dim {
+  opacity: 0.55;
+}
+
+/* Viền gradient vàng hiện khi hover */
+.btn-ring {
+  position: relative;
+  isolation: isolate;
+}
+.btn-ring::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(90deg, var(--color-gold-500), var(--color-gold-300), var(--color-gold-500));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-luxe);
+  pointer-events: none;
+}
+.btn-ring:hover::before,
+.btn-ring:focus-visible::before {
+  opacity: 1;
+}
+
+/* Kính mờ (liquid glass) — chỉ dùng trên nền ảnh tối */
+.glass {
+  position: relative;
+  background: rgb(255 255 255 / 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 1px rgb(255 255 255 / 0.12);
+}
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.45) 0%,
+    rgb(255 255 255 / 0.12) 25%,
+    rgb(255 255 255 / 0) 45%,
+    rgb(255 255 255 / 0) 55%,
+    rgb(255 255 255 / 0.12) 75%,
+    rgb(255 255 255 / 0.45) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .glass {
+    background: rgb(38 48 32 / 0.85);
+  }
+}
+/* Viền vàng chạy chậm cho đúng một badge */
+.glass-animated::before {
+  background: linear-gradient(90deg, rgb(216 192 138 / 0.15), rgb(216 192 138 / 0.9), rgb(255 255 255 / 0.3), rgb(216 192 138 / 0.15));
+  background-size: 200% 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .glass-animated::before {
+    animation: gradient-shift 6s ease infinite;
+  }
+}
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Chữ xoay vòng */
+@keyframes role-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-role-in {
+    animation: role-in 0.6s var(--ease-luxe) both;
+  }
+}
+
+/* Chỉ báo cuộn */
+@keyframes scroll-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-scroll-down {
+    animation: scroll-down 1.6s ease-in-out infinite;
+  }
+}
+
+/* Menu đang xem */
+.nav-link[aria-current]::after {
+  transform: scaleX(1);
+}
+.nav-link[aria-current] {
+  opacity: 1;
+}
+
+/* Lớp phủ thẻ dịch vụ: chỉ khi có chuột */
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover .card-overlay {
+    opacity: 1;
+  }
+  .card-pill {
+    transform: translateY(12px);
+    transition: transform 0.7s var(--ease-luxe);
+  }
+  .service-card:hover .card-pill {
+    transform: translateY(0);
+  }
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Dải phủ cho ảnh lộ theo dải: mặc định đã co (không JS vẫn thấy ảnh), GSAP đặt lại rồi co dần */
+.reveal-strip {
+  transform: scaleY(0);
+  transform-origin: top;
+  will-change: transform;
+}
+
+/* Nút chữ cuộn: khi hover, chữ trượt lên và bản sao thế chỗ (chỉ thiết bị có chuột) */
+.roll-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding-block: 0.15em;
+  margin-block: -0.15em;
+}
+.roll-text > span {
+  display: block;
+  transition: transform 0.6s var(--ease-luxe);
+}
+.roll-text > span + span {
+  position: absolute;
+  inset: 0.15em 0 auto;
+  transform: translateY(130%);
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :is(a, button):hover .roll-text > span:first-child,
+  :is(a, button):focus-visible .roll-text > span:first-child {
+    transform: translateY(-130%);
+  }
+  :is(a, button):hover .roll-text > span + span,
+  :is(a, button):focus-visible .roll-text > span + span {
+    transform: translateY(0);
+  }
+}
