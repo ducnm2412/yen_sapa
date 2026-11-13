@@ -10,12 +10,14 @@ const CLIPS = [
 ];
 
 /**
- * Nền hero: màn hình chia 3 cột, mỗi cột một video dọc phát lặp (muted, playsInline).
+ * Nền hero: điện thoại 1 video toàn màn hình; từ md trở lên chia 3 cột, mỗi cột một video dọc phát lặp (muted, playsInline).
  * Ảnh LCP vẫn nằm bên dưới; mỗi video chỉ hiện lên (fade-in) khi đã thật sự phát.
  * Tạm dừng khi hero khuất màn hình / tab ẩn; không render khi prefers-reduced-motion.
  */
 export function HeroVideoReel() {
   const [enabled, setEnabled] = useState(false);
+  // Điện thoại chỉ phát 1 video (không tải 2 video còn lại); từ md trở lên chia 3 cột
+  const [count, setCount] = useState(1);
   const [playing, setPlaying] = useState<boolean[]>(() => CLIPS.map(() => false));
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
   const wrapper = useRef<HTMLDivElement>(null);
@@ -25,7 +27,14 @@ export function HeroVideoReel() {
     const update = () => setEnabled(!mq.matches);
     update();
     mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
+    const wide = window.matchMedia("(min-width: 768px)");
+    const updateCount = () => setCount(wide.matches ? CLIPS.length : 1);
+    updateCount();
+    wide.addEventListener("change", updateCount);
+    return () => {
+      mq.removeEventListener("change", update);
+      wide.removeEventListener("change", updateCount);
+    };
   }, []);
 
   useEffect(() => {
@@ -50,13 +59,13 @@ export function HeroVideoReel() {
       io.disconnect();
       document.removeEventListener("visibilitychange", sync);
     };
-  }, [enabled]);
+  }, [enabled, count]);
 
   if (!enabled) return null;
 
   return (
-    <div ref={wrapper} aria-hidden="true" className="absolute inset-0 -z-10 grid grid-cols-3 gap-px bg-black/40">
-      {CLIPS.map((clip, i) => (
+    <div ref={wrapper} aria-hidden="true" className="absolute inset-0 -z-10 grid grid-cols-1 gap-px md:grid-cols-3 bg-black/40">
+      {CLIPS.slice(0, count).map((clip, i) => (
         <div key={clip.src} className="relative overflow-hidden">
           <video
             ref={(el) => {
