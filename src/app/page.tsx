@@ -6,11 +6,9 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PricingSection } from "@/components/PricingSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SpaceSection } from "@/components/SpaceSection";
-import { ContactSection } from "@/components/ContactSection";
 import { BannerSection } from "@/components/BannerSection";
 import { PromoSection } from "@/components/PromoSection";
-import { ProductsSection } from "@/components/ProductsSection";
-import { ResultsSection } from "@/components/ResultsSection";
+import { BentoShowcase } from "@/components/BentoShowcase";
 import { Footer } from "@/components/Footer";
 import { FloatingContactBar } from "@/components/FloatingContactBar";
 
@@ -27,12 +25,14 @@ export default function Home() {
         </div>
         <ServicesSection />
         <PromoSection />
-        <ProductsSection />
+        {/* Bento Editorial: sản phẩm + combo + member + ưu đãi + trước/sau, rồi trải nghiệm zigzag */}
+        <BentoShowcase />
         <SpaceSection />
-        <ResultsSection />
         <PricingSection />
-        <ReviewsSection />
-        <ContactSection />
+        {/* Khối xanh bo cong (đánh giá + đặt lịch); nền phía sau trùng màu section trên để góc cong liền mạch */}
+        <div className="bg-[#f4ece0]">
+          <ReviewsSection />
+        </div>
       </main>
       <Footer />
       <FloatingContactBar />
