@@ -21,8 +21,11 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <BannerSection />
-        <AboutSection />
+        {/* Overlapping scroll: banner ghim lại, "Về Yên Spa" trượt lên đè */}
+        <div className="relative">
+          <BannerSection />
+          <AboutSection />
+        </div>
         <ServicesSection />
         <PromoSection />
         <ProductsSection />

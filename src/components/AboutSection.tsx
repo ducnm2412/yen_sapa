@@ -15,7 +15,7 @@ export function AboutSection() {
     { value: 4, from: 0, suffix: "", label: "Mảng chăm sóc" },
   ];
   return (
-    <section id="gioi-thieu" className="relative z-[2] bg-beige-50 px-4 pt-14 pb-40 sm:px-6 sm:pt-20 sm:pb-52">
+    <section id="gioi-thieu" className="relative z-[3] rounded-t-[2.5rem] bg-beige-50 px-4 pt-14 pb-40 shadow-[0_-30px_60px_-30px_rgba(38,48,32,0.35)] sm:rounded-t-[3.5rem] sm:px-6 sm:pt-20 sm:pb-52">
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-[1fr_1.05fr] md:gap-10">
         <div className="md:pr-6">
           <p className="flex items-center gap-3 text-[11px] font-semibold tracking-[0.25em] text-moss-700 uppercase">

@@ -209,6 +209,25 @@ export function MotionSystem() {
           (el) => Array.from(el.children),
         );
 
+        /* ---------- Overlapping scroll sections ----------
+         * [data-stack] được ghim bằng CSS sticky; khi section kế tiếp trượt lên đè,
+         * phần [data-stack-inner] thu nhỏ và tối dần theo scroll. */
+        q("[data-stack]").forEach((el) => {
+          const next = el.nextElementSibling;
+          const inner = el.querySelector("[data-stack-inner]");
+          if (!next || !inner) return;
+          gsap.fromTo(
+            inner,
+            { scale: 1, filter: "brightness(1)" },
+            {
+              scale: 0.9,
+              filter: "brightness(0.55)",
+              ease: "none",
+              scrollTrigger: { trigger: next, start: "top bottom", end: "top top", scrub: true },
+            },
+          );
+        });
+
         /* Ảnh lộ theo dải: các dải phủ màu nền co lại lần lượt (mặc định CSS scaleY(0) nên không JS vẫn thấy ảnh) */
         reveal(
           "[data-reveal='strips']",
