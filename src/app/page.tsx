@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { AboutSection } from "@/components/AboutSection";
 import { ServicesSection } from "@/components/ServicesSection";
-import { ProcessSection } from "@/components/ProcessSection";
 import { PricingSection } from "@/components/PricingSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SpaceSection } from "@/components/SpaceSection";
@@ -31,7 +30,6 @@ export default function Home() {
         <ProductsSection />
         <SpaceSection />
         <ResultsSection />
-        <ProcessSection />
         <PricingSection />
         <ReviewsSection />
         <ContactSection />
