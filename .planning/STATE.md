@@ -103,3 +103,4 @@ Resume file: .planning/phases/01-foundation-live-conversion-path/01-CONTEXT.md
 |----|------|------|-----|
 | 261113-ebo | 2026-11-13 | Hero: nền 3 video chia 3 cột | .planning/quick/261113-ebo-hero-3-video-gioi-thieu |
 | 261113-jgz | 2026-11-13 | Phôi B "Nắng xuyên lá": SIG-01/505/305, bóng lá cọ hero, giảm lặp reveal | .planning/quick/261113-jgz-phoi-b-nang-xuyen-la-hieu-ung |
+| 261113-knm | 2026-11-13 | SIG-1211 Banner→About, SIG-220 polaroid About, SIG-602 viền sáng Triệt lông OPT | .planning/quick/261113-knm-sig-1211-220-602-banner-about-services |

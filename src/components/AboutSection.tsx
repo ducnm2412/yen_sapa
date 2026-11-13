@@ -1,13 +1,13 @@
-import Image from "next/image";
 import { ArrowRight, Leaf, MapPin, Sparkles } from "lucide-react";
 import { site } from "@/content/site";
 import { RollText } from "@/components/motion/RollText";
 import { SplitChars, SplitWords } from "@/components/motion/Split";
 import { Wave } from "@/components/Wave";
+import { SIG220 } from "@/components/signature/SIG-220/SIG-220";
 
 const statIcons = [Sparkles, MapPin, Leaf];
 
-/** Bố cục theo mẫu: chữ trái (eyebrow, tiêu đề, đoạn, nút, 3 chỉ số), ảnh phải + thẻ nổi + số "01" mờ. */
+/** Bố cục theo mẫu: chữ trái (eyebrow, tiêu đề, đoạn, nút, 3 chỉ số), ảnh khách dạng polaroid ở bên phải (SIG-220) trên nền số "01" mờ. */
 export function AboutSection() {
   const stats = [
     { value: site.since, from: 2010, suffix: "", label: "Năm thành lập" },
@@ -15,7 +15,7 @@ export function AboutSection() {
     { value: 4, from: 0, suffix: "", label: "Mảng chăm sóc" },
   ];
   return (
-    <section id="gioi-thieu" className="relative z-[3] rounded-t-[2.5rem] bg-beige-50 px-4 pt-14 pb-40 shadow-[0_-30px_60px_-30px_rgba(38,48,32,0.35)] sm:rounded-t-[3.5rem] sm:px-6 sm:pt-20 sm:pb-52">
+    <section id="gioi-thieu" className="relative bg-beige-50 px-4 pt-14 pb-40 sm:px-6 sm:pt-20 sm:pb-52">
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-[1fr_1.05fr] md:gap-10">
         <div className="md:pr-6">
           <p className="flex items-center gap-3 text-[11px] font-semibold tracking-[0.25em] text-moss-700 uppercase">
@@ -59,7 +59,7 @@ export function AboutSection() {
           </dl>
         </div>
 
-        <div className="relative">
+        <div className="relative min-w-0">
           {/* Số "01" viền mảnh phía sau */}
           <span
             aria-hidden="true"
@@ -67,41 +67,10 @@ export function AboutSection() {
           >
             01
           </span>
-          <div
-            data-reveal="strips"
-            data-parallax="24"
-            className="relative mr-0 aspect-[4/5] overflow-hidden rounded-sm shadow-[0_40px_80px_-40px_rgba(38,48,32,0.45)] sm:mr-16 md:aspect-[5/5.6]"
-          >
-            <div data-parallax-inner className="absolute inset-x-0 -inset-y-8">
-              <Image
-                src="/images/space/lobby.jpg"
-                alt="Sảnh chờ của Yên Spa với sofa da, ghế bọc vải và cây xanh"
-                fill
-                sizes="(min-width: 768px) 45vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex">
-              {[0, 1, 2, 3, 4, 5].map((i) => (
-                <span key={i} className="reveal-strip h-full flex-1 bg-beige-50" />
-              ))}
-            </div>
-          </div>
-          {/* Thẻ nổi */}
-          <a
-            href="#dich-vu"
-            data-reveal="blur"
-            data-delay="0.4"
-            className="lift-card absolute right-0 bottom-16 flex items-center gap-6 rounded-sm bg-beige-50/95 py-4 pr-4 pl-5 shadow-xl backdrop-blur"
-          >
-            <span>
-              <span className="block font-sans text-base font-semibold text-moss-900">Chăm da khoa học</span>
-              <span className="block text-xs text-muted">Trong từng bước chăm sóc</span>
-            </span>
-            <span className="grid size-9 place-items-center rounded-full bg-moss-700 text-white">
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </span>
-          </a>
+          <SIG220
+            items={site.aboutPolaroids}
+            labels={{ group: "Ảnh khách hàng tại Yên Spa", dragHint: "Kéo ảnh để xếp lại", swipeHint: "Vuốt ngang để xem thêm ảnh" }}
+          />
         </div>
       </div>
 

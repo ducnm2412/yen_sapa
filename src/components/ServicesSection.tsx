@@ -3,8 +3,11 @@ import { ArrowRight, Flower2, Scissors, Sparkles, Sun } from "lucide-react";
 import { site } from "@/content/site";
 import { SplitChars, SplitWords } from "@/components/motion/Split";
 import { Wave } from "@/components/Wave";
+import { Sig602GlowRing } from "@/components/signature/SIG-602/SIG-602";
 
 const icons = [Sparkles, Flower2, Scissors, Sun];
+/** Gói nổi bật có viền vàng chạy quanh (SIG-602): chỉ thẻ "Triệt lông OPT". */
+const GLOW_GROUP_ID = "triet-long";
 
 /** Dải xanh rêu: eyebrow + tiêu đề 2 dòng, link phải, chấm dọc bên trái, 4 thẻ ảnh có thanh kính mờ ở đáy. */
 export function ServicesSection() {
@@ -72,6 +75,7 @@ export function ServicesSection() {
                     </span>
                   </div>
                   </div>
+                  {g.id === GLOW_GROUP_ID ? <Sig602GlowRing /> : null}
                 </a>
               </li>
             );

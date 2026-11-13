@@ -68,6 +68,51 @@ export const site = {
       "Các gói treatment được chuyên viên tư vấn và chọn theo đúng tình trạng da của bạn, thay vì tự chọn, để tránh kích ứng. Mỗi khách dùng khăn lau, bông và kim mới; sản phẩm đến từ các dòng chuyên nghiệp như Christina, Dermafirm, Image và Batious.",
     ],
   },
+  /** 7 ảnh khách do Yên Spa cung cấp (SIG-220 trong About). Mô tả theo đúng những gì nhìn thấy; không tên người, không nói về kết quả điều trị. */
+  aboutPolaroids: [
+    {
+      src: "/images/customers/photo-diary-1.jpg",
+      alt: "Khách hàng tại Yên Spa: nhóm tám người ngồi ở sảnh chờ, cầm các bảng chữ Yên Spa và Yên Beaute",
+      width: 936,
+      height: 936,
+    },
+    {
+      src: "/images/customers/yen-capture-1.jpg",
+      alt: "Khách hàng tại Yên Spa: hai khách ngồi ở bàn tròn trong sảnh, trong khung ảnh Yên Capture “Yêu mình một cách Yên lành”",
+      width: 1080,
+      height: 1080,
+    },
+    {
+      src: "/images/customers/photo-diary-2.jpg",
+      alt: "Khách hàng tại Yên Spa: ba khách ngồi trên sofa da, cầm bảng chữ Yên Beaute, Yên Spa và Thư Giãn Cùng Yên, trong trang Photo Diary",
+      width: 1080,
+      height: 1080,
+    },
+    {
+      src: "/images/customers/yen-capture-2.jpg",
+      alt: "Khách hàng tại Yên Spa: một khách ngồi trên ghế mây ở sảnh, giơ tay chữ V, trong khung ảnh Yên Capture",
+      width: 1080,
+      height: 1080,
+    },
+    {
+      src: "/images/customers/photo-diary-3.jpg",
+      alt: "Khách hàng tại Yên Spa: năm khách ngồi trên sofa cạnh cây xanh, cầm các bảng chữ, trong trang Photo Diary",
+      width: 1080,
+      height: 1080,
+    },
+    {
+      src: "/images/customers/yen-capture-3.jpg",
+      alt: "Khách hàng tại Yên Spa: ba khách ngồi trên sofa trong sảnh, nhìn từ trên cao, trong khung ảnh Yên Capture",
+      width: 1080,
+      height: 1080,
+    },
+    {
+      src: "/images/customers/photo-diary-4.jpg",
+      alt: "Khách hàng tại Yên Spa: bốn khách ngồi sát nhau trên sofa da dưới bức tranh treo tường, trong trang Photo Diary",
+      width: 1080,
+      height: 1080,
+    },
+  ],
   /** Chỉ số thật, lấy từ banner và bảng giá của khách — không bịa số liệu. */
   stats: [
     { value: 2019, from: 2010, suffix: "", label: "Năm Yên bắt đầu hành trình" },

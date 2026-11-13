@@ -1,12 +1,11 @@
 import { MotionSystem } from "@/components/motion/MotionSystem";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { AboutSection } from "@/components/AboutSection";
+import { BannerAboutStack } from "@/components/BannerAboutStack";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PricingSection } from "@/components/PricingSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SpaceSection } from "@/components/SpaceSection";
-import { BannerSection } from "@/components/BannerSection";
 import { PromoSection } from "@/components/PromoSection";
 import { BentoShowcase } from "@/components/BentoShowcase";
 import { BrandSentence } from "@/components/BrandSentence";
@@ -20,11 +19,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        {/* Overlapping scroll: banner ghim lại, "Về Yên Spa" trượt lên đè */}
-        <div className="relative">
-          <BannerSection />
-          <AboutSection />
-        </div>
+        {/* Banner giữ lại, "Về Yên Spa" trượt lên đè như tấm thẻ (SIG-1211) */}
+        <BannerAboutStack />
         {/* Câu thương hiệu đứng yên, lá trôi phía sau (SIG-01) */}
         <BrandSentence />
         <ServicesSection />
