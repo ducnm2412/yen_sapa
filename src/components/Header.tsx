@@ -53,7 +53,7 @@ export function Header() {
           aria-label={`${site.name} — về đầu trang`}
         >
           <Image
-            src="/images/brand/logo-green.jpg"
+            src="/images/brand/logo-red-mark.png"
             alt=""
             width={44}
             height={44}

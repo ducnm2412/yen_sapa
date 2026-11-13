@@ -11,7 +11,7 @@ export function Footer() {
       <div data-reveal="stagger" className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1.1fr_1.1fr] lg:divide-x lg:divide-white/10">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/images/brand/logo-green.jpg" alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
+            <Image src="/images/brand/logo-red-mark.png" alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
             <p className="font-logo text-2xl text-white">{site.name}</p>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-beige-200">{site.tagline} · Since{" "}{site.since}</p>
