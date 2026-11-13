@@ -15,7 +15,7 @@ export function ProductsSection() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Sản phẩm & công nghệ"
-          title="Sản phẩm chuyên nghiệp, máy móc hiện đại"
+          title="Sản~phẩm chuyên~nghiệp, máy~móc hiện~đại"
           text="Sản phẩm Christina, ánh sáng LED, laser triệt lông và các liệu trình body, tóc được dùng trực tiếp tại Yên."
         />
         <ul data-reveal="stagger" className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">

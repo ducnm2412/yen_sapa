@@ -39,7 +39,7 @@ export function SpaceSection() {
             </span>
             <span data-reveal="line" className="h-px w-10 origin-left bg-moss-700/50" aria-hidden="true" />
           </p>
-          <h2 data-reveal="words" className="mt-4 font-serif text-4xl leading-[1.12] font-medium text-moss-900 sm:text-5xl">
+          <h2 data-reveal="words" className="mt-4 font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900 sm:text-4xl">
             <SplitWords text="Một khoảng lặng" />
             <br />
             <span className="text-moss-700/80 italic">

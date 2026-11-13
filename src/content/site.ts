@@ -219,7 +219,7 @@ export const site = {
         rows: [
           ["Detox & Cấp ẩm", "45′", "250.000"],
           ["Glowy Face Sáng da", "45′", "250.000"],
-          ["Aquamarine Face Tinh khiết", "75′", "440.000"],
+          ["Aquamarine~Face Tinh~khiết", "75′", "440.000"],
           ["Diamond Face Lấp lánh", "75′", "440.000"],
         ],
       },
@@ -250,10 +250,10 @@ export const site = {
       {
         title: "Body Massage & Care",
         rows: [
-          ["Massage Aroma Thư giãn", "60′ / 90′", "300.000 / 420.000"],
+          ["Massage~Aroma Thư~giãn", "60′ / 90′", "300.000 / 420.000"],
           ["Massage Đá nóng Thụy Điển", "60′ / 90′", "350.000 / 450.000"],
           ["Trị liệu YHCT Vai Cổ Gáy", "30′", "250.000"],
-          ["Massage Healing", "60′ / 90′", "400.000 / 550.000"],
+          ["Massage~Healing", "60′ / 90′", "400.000 / 550.000"],
         ],
       },
       {

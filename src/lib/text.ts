@@ -6,8 +6,10 @@ const GLUE_TOKENS = new Set(["/", "—", "–", "-", "·", "&", "+"]);
  * nên dòng cuối luôn có ít nhất 2 từ. Nếu từ liền trước là ký hiệu (/, —, ·…)
  * thì nối thêm một từ nữa để không còn "/ Aquamarine" đứng riêng.
  */
-export function noOrphan(text: string): string {
-  const words = text.trim().split(/\s+/);
+export function noOrphan(input: string): string {
+  // "~" = dấu cách không ngắt (giữ từ ghép tiếng Việt)
+  const text = input.replace(/~/g, NBSP);
+  const words = text.trim().split(/ +/);
   if (words.length < 3) return text;
   let glue = 1;
   if (GLUE_TOKENS.has(words[words.length - 2]) && words.length >= 4) glue = 2;

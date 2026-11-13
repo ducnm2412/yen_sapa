@@ -59,7 +59,7 @@ export function Header() {
             height={44}
             className="size-10 rounded-full object-cover ring-1 ring-white/40 sm:size-11"
           />
-          <span className="font-serif text-xl leading-none font-medium tracking-wide sm:text-2xl">
+          <span className="font-logo text-xl leading-none font-medium tracking-wide whitespace-nowrap sm:text-2xl">
             Yên{" "}
             <span className="hidden text-sm tracking-[0.2em] uppercase opacity-80 min-[400px]:inline">
               Spa + Beaute
@@ -69,21 +69,21 @@ export function Header() {
 
         <nav data-hero="nav" aria-label="Điều hướng chính" className="hidden items-center gap-8 md:flex">
           {site.nav.map((item) => (
-            <a key={item.href} href={item.href} data-nav-link className="nav-link text-sm font-medium tracking-wide">
+            <a key={item.href} href={item.href} data-nav-link className="nav-link text-sm font-medium tracking-wide whitespace-nowrap">
               {item.label}
             </a>
           ))}
           <a
             href={site.bookingAnchor}
             data-magnetic
-            className="btn-shimmer rounded-full bg-moss-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-moss-800"
+            className="btn-shimmer rounded-full bg-moss-700 px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white transition-colors duration-300 hover:bg-moss-800"
           >
             Đặt lịch
           </a>
         </nav>
 
         <div data-hero="nav" className="flex items-center gap-2 md:hidden">
-          <a href={site.bookingAnchor} className="rounded-full bg-moss-700 px-4 py-2 text-sm font-semibold text-white">
+          <a href={site.bookingAnchor} className="rounded-full bg-moss-700 px-4 py-2 text-sm font-semibold whitespace-nowrap text-white">
             Đặt lịch
           </a>
           <button

@@ -14,7 +14,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Bảng giá"
-          title="Combo best seller — tiết kiệm đến 30%"
+          title="Combo best~seller — tiết~kiệm đến~30%"
           dim={[3, 4, 5, 6]}
           text="Trọn vẹn body, tóc và da mặt trong một lần ghé Yên."
         />
@@ -32,8 +32,9 @@ export function PricingSection() {
               <p className={clsx("font-serif text-sm tracking-[0.2em]", "featured" in c ? "text-gold-300" : "text-gold-500")}>
                 COMBO {i + 1} · {c.duration}
               </p>
-              <h3 className={clsx("mt-3 font-serif text-3xl leading-tight", "featured" in c ? "text-white" : "text-moss-900")}>
-                {c.name} <span className="italic opacity-70">{c.sub}</span>
+              <h3 className={clsx("mt-3 font-sans text-2xl leading-tight font-semibold whitespace-nowrap md:text-xl lg:text-2xl", "featured" in c ? "text-white" : "text-moss-900")}>
+                {c.name}
+                <span className="mt-1 block text-base font-medium whitespace-nowrap opacity-70">{c.sub}</span>
               </h3>
               <p className="mt-5 flex items-baseline gap-3">
                 <span className={clsx("font-serif text-5xl", "featured" in c ? "text-gold-300" : "text-moss-800")}>{c.price}</span>
@@ -64,7 +65,7 @@ export function PricingSection() {
         {/* Bảng giá lẻ: accordion thuần HTML, đọc được trên mobile không cần phóng to */}
         <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
-            <h3 data-reveal="words" className="font-serif text-4xl leading-tight text-moss-900">
+            <h3 data-reveal="words" className="font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900">
               Bảng giá dịch vụ lẻ
             </h3>
             <p data-reveal="fade-up" className="mt-3 text-sm leading-relaxed text-muted">{p.note}</p>
@@ -72,14 +73,14 @@ export function PricingSection() {
             {/* Thẻ thành viên */}
             <div data-reveal="fade-up" className="mt-10 rounded-[2rem] bg-moss-900 p-7 text-beige-100 sm:p-8">
               <p className="text-xs font-semibold tracking-[0.3em] text-gold-300 uppercase">Thẻ ưu đãi Member</p>
-              <p className="mt-2 font-serif text-2xl text-white">Nạp một lần — nhận thêm đến 40% giá trị</p>
+              <p className="mt-2 font-sans text-xl font-semibold text-white">Nạp một lần — nhận thêm đến {noOrphan("40% giá~trị")}</p>
               <ul className="mt-6 divide-y divide-white/10">
                 {p.members.map((m) => (
                   <li key={m.name} className="flex items-baseline justify-between gap-4 py-3">
                     <span className="font-serif text-xl text-gold-300">{m.name}</span>
                     <span className="text-right text-sm">
-                      Nạp {m.pay} · tặng {m.gift}
-                      <span className="block text-xs text-beige-200">Tài khoản {m.total}đ</span>
+                      <span className="whitespace-nowrap">Nạp {m.pay}</span> · <span className="whitespace-nowrap">tặng {m.gift}</span>
+                      <span className="block text-xs whitespace-nowrap text-beige-200">Tài khoản {m.total}đ</span>
                     </span>
                   </li>
                 ))}
@@ -98,8 +99,8 @@ export function PricingSection() {
           <div data-reveal="stagger" className="space-y-3">
             {p.menus.map((m, i) => (
               <details key={m.title} open={i === 0} className="group rounded-2xl bg-beige-50 ring-1 ring-beige-200 open:ring-gold-500/40">
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 font-serif text-xl text-moss-900 sm:px-6">
-                  {m.title}
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 font-sans text-lg font-semibold text-moss-900 sm:px-6">
+                  {noOrphan(m.title)}
                   <ChevronDown
                     className="size-5 shrink-0 text-moss-600 transition-transform duration-500 group-open:rotate-180"
                     aria-hidden="true"
@@ -111,8 +112,8 @@ export function PricingSection() {
                     {m.rows.map(([name, time, price]) => (
                       <tr key={name} className="border-t border-beige-200">
                         <th scope="row" className="px-5 py-3 text-left font-medium text-ink sm:px-6">
-                          {name}
-                          {time && <span className="block text-xs font-normal text-muted">{time}</span>}
+                          {noOrphan(name)}
+                          {time && <span className="block text-xs font-normal whitespace-nowrap text-muted">{time}</span>}
                         </th>
                         <td className="px-5 py-3 text-right whitespace-nowrap text-moss-800 sm:px-6">{price}</td>
                       </tr>
@@ -124,7 +125,7 @@ export function PricingSection() {
           </div>
         </div>
         <div className="mt-14">
-          <h3 data-reveal="fade-up" className="font-serif text-3xl font-medium text-moss-900">Menu bảng giá chi tiết</h3>
+          <h3 data-reveal="fade-up" className="font-sans text-2xl font-semibold text-moss-900">Menu bảng giá chi tiết</h3>
           <div className="mt-6">
             <PosterRail images={menus} label="Ảnh menu bảng giá" itemClassName="w-[78%] sm:w-[42%] lg:w-[23%]" />
           </div>

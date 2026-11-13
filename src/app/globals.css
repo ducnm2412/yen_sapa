@@ -21,7 +21,9 @@
   --color-gold-500: #b8975a;
 
   --font-sans: var(--font-body);
-  --font-serif: var(--font-display);
+  /* Tiêu đề dùng font sans dễ đọc; Cormorant chỉ còn cho wordmark logo */
+  --font-serif: var(--font-body);
+  --font-logo: var(--font-display);
 
   --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
 }

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { SplitChars, SplitWords } from "@/components/motion/Split";
+import { noOrphan } from "@/lib/text";
 
 export function SectionHeading({
   eyebrow,
@@ -32,7 +33,7 @@ export function SectionHeading({
       <h2
         data-reveal={titleEffect}
         className={clsx(
-          "mt-4 font-serif text-4xl leading-tight font-medium sm:text-5xl",
+          "mt-4 font-sans text-3xl leading-tight font-semibold tracking-tight sm:text-4xl",
           light ? "text-white" : "text-moss-900",
         )}
       >
@@ -44,7 +45,7 @@ export function SectionHeading({
           data-delay="0.2"
           className={clsx("mt-4 text-base leading-relaxed sm:text-lg", light ? "text-beige-100" : "text-muted")}
         >
-          {text}
+          {noOrphan(text)}
         </p>
       )}
     </div>

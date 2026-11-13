@@ -12,9 +12,9 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Image src="/images/brand/logo-green.jpg" alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
-            <p className="font-serif text-2xl text-white">{site.name}</p>
+            <p className="font-logo text-2xl text-white">{site.name}</p>
           </div>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-beige-200">{site.tagline} · Since {site.since}</p>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-beige-200">{site.tagline} · Since{" "}{site.since}</p>
         </div>
 
         <nav aria-label="Liên kết nhanh" className="lg:pl-8">
@@ -89,7 +89,7 @@ export function Footer() {
 
       <div className="mx-auto mt-12 flex max-w-6xl items-center justify-between border-t border-white/10 pt-6 text-xs text-beige-300">
         <p>© 2026 {site.name}. Bảo lưu mọi quyền.</p>
-        <a href="#trang-chu" className="group inline-flex items-center gap-1.5 hover:text-white">
+        <a href="#trang-chu" className="group inline-flex items-center gap-1.5 whitespace-nowrap hover:text-white">
           Lên đầu trang
           <ArrowUp className="size-3.5 transition-transform group-hover:-translate-y-0.5" aria-hidden="true" />
         </a>

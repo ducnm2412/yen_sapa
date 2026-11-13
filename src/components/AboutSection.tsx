@@ -46,7 +46,7 @@ export function AboutSection() {
               const Icon = statIcons[i];
               return (
                 <div key={s.label} className="flex flex-col-reverse items-center justify-end text-center">
-                  <dt className="mt-1 text-sm leading-snug text-muted">{s.label}</dt>
+                  <dt className="mt-1 text-[13px] leading-snug whitespace-nowrap text-muted sm:text-sm">{s.label}</dt>
                   <dd className="font-sans text-2xl font-semibold text-moss-900 tabular-nums lining-nums">
                     <Icon className="mx-auto mb-2 size-5 text-moss-600" strokeWidth={1.4} aria-hidden="true" />
                     <span data-counter={s.value} data-counter-from={s.from}>

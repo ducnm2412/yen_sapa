@@ -1,5 +1,8 @@
 import { Fragment } from "react";
 
+/** "~" trong chuỗi = dấu cách không ngắt dòng, dùng để giữ nguyên từ ghép tiếng Việt (chuyên~nghiệp, an~yên). */
+const glue = (w: string) => w.replace(/~/g, " ");
+
 /**
  * Tách chữ phía server (không layout shift, không cần plugin).
  * Mỗi từ nằm trong một "mặt nạ" overflow-hidden có padding đủ cho dấu tiếng Việt (ệ, ẫ, ử…).
@@ -9,13 +12,13 @@ export function SplitWords({ text, dim = [] }: { text: string; /** chỉ số c�
   const words = text.split(" ");
   const word = (i: number) => (
     <span className="split-word">
-      <span className={dim.includes(i) ? "split-inner word-dim" : "split-inner"}>{words[i]}</span>
+      <span className={dim.includes(i) ? "split-inner word-dim" : "split-inner"}>{glue(words[i])}</span>
     </span>
   );
   // Ghép 2 từ cuối vào một khối không ngắt dòng để không bao giờ có 1 chữ trơ trọi ở dòng cuối
   // (mỗi từ là inline-block nên không dùng được &nbsp;).
-  const glue = words.length >= 3 ? 2 : 0;
-  const head = words.length - glue;
+  const tailCount = words.length >= 3 ? 2 : 0;
+  const head = words.length - tailCount;
   return (
     <>
       {words.slice(0, head).map((_, i) => (
@@ -24,7 +27,7 @@ export function SplitWords({ text, dim = [] }: { text: string; /** chỉ số c�
           {i < words.length - 1 ? " " : null}
         </Fragment>
       ))}
-      {glue > 0 && (
+      {tailCount > 0 && (
         <span className="whitespace-nowrap">
           {word(head)} {word(head + 1)}
         </span>

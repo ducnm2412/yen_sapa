@@ -8,7 +8,7 @@ export function PromoSection() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Ưu đãi đang áp dụng"
-          title="Combo & thẻ thành viên"
+          title="Combo & thẻ~thành~viên"
           text="Các gói kết hợp body, tóc và da mặt, cùng ưu đãi triệt lông và thẻ thành viên. Bấm vào ảnh để xem đầy đủ chi tiết."
         />
         <div className="mt-10">

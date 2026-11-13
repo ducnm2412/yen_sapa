@@ -22,11 +22,11 @@ export function ContactSection() {
       </div>
 
       <div id="dat-lich" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 sm:py-28">
-        <h2 data-reveal="words" className="max-w-md font-serif text-4xl leading-[1.15] font-medium text-moss-900 sm:text-5xl">
-          <SplitWords text="Sẵn sàng cho một khoảng an yên?" dim={[4, 5]} />
+        <h2 data-reveal="words" className="max-w-md font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900 sm:text-4xl">
+          <SplitWords text="Sẵn sàng cho một khoảng an~yên?" dim={[4, 5]} />
         </h2>
         <p data-reveal="fade-up" className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-          Gọi hoặc nhắn Zalo cho chi nhánh gần bạn để được tư vấn và giữ lịch — mở cửa {site.hours.display} mỗi ngày.
+          Gọi hoặc nhắn Zalo cho chi nhánh gần bạn để được tư vấn và giữ lịch — mở cửa {site.hours.display}{" "}mỗi{" "}ngày.
         </p>
         <div data-reveal="stagger" className="mt-8 flex flex-wrap gap-3">
           {site.branches.map((b) => (
