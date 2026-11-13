@@ -1,15 +1,19 @@
-import Image from "next/image";
-import { ArrowRight, Flower2, Scissors, Sparkles, Sun } from "lucide-react";
+import type { CSSProperties } from "react";
+import { ArrowRight } from "lucide-react";
 import { site } from "@/content/site";
 import { SplitChars, SplitWords } from "@/components/motion/Split";
 import { Wave } from "@/components/Wave";
-import { Sig602GlowRing } from "@/components/signature/SIG-602/SIG-602";
+import { Sig403HoverList } from "@/components/signature/SIG-403/SIG-403";
 
-const icons = [Sparkles, Flower2, Scissors, Sun];
-/** Gói nổi bật có viền vàng chạy quanh (SIG-602): chỉ thẻ "Triệt lông OPT". */
-const GLOW_GROUP_ID = "triet-long";
+const themeVars = {
+  "--sig-fg": "var(--color-beige-50)",
+  "--sig-muted": "color-mix(in oklab, var(--color-beige-50) 45%, transparent)",
+  "--sig-accent": "var(--color-gold-300)",
+  "--sig-font-display": "var(--font-display)",
+  "--sig-font-body": "var(--font-body)",
+} as CSSProperties;
 
-/** Dải xanh rêu: eyebrow + tiêu đề 2 dòng, link phải, chấm dọc bên trái, 4 thẻ ảnh có thanh kính mờ ở đáy. */
+/** Dải xanh rêu: eyebrow + tiêu đề 2 dòng, link phải, chấm dọc bên trái, 4 mảng dịch vụ thành danh sách lớn; trên desktop ảnh hiện theo con trỏ (SIG-403), còn điện thoại và giảm chuyển động thì mỗi hàng có sẵn ảnh. */
 export function ServicesSection() {
   return (
     <section id="dich-vu" className="relative overflow-hidden bg-moss-900 pt-12 pb-40 text-white sm:pt-16 sm:pb-48">
@@ -46,41 +50,20 @@ export function ServicesSection() {
           </a>
         </div>
 
-        <ul data-reveal="stagger" className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {site.serviceGroups.map((g, i) => {
-            const Icon = icons[i];
-            return (
-              <li key={g.id}>
-                <a
-                  href="#bang-gia"
-                  className="service-card group relative block aspect-[4/5] overflow-hidden rounded-sm border border-white/15 sm:aspect-[5/6]"
-                >
-                  <div data-scale-in className="absolute inset-0">
-                    <Image
-                      src={g.image}
-                      alt={g.alt}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
-                      className="object-cover transition-transform duration-[1.2s] ease-(--ease-luxe) group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0">
-                  <div className="glass flex items-center gap-3 rounded-none bg-moss-900/55 px-3 py-3 sm:px-4 sm:py-4">
-                    <span className="grid size-8 shrink-0 place-items-center rounded-full border border-white/40 sm:size-9">
-                      <Icon className="size-4" strokeWidth={1.5} aria-hidden="true" />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block truncate text-sm font-semibold">{g.title}</span>
-                      <span className="block truncate text-[11px] text-beige-100/80">{g.sub}</span>
-                    </span>
-                  </div>
-                  </div>
-                  {g.id === GLOW_GROUP_ID ? <Sig602GlowRing /> : null}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-10" style={themeVars}>
+          <Sig403HoverList
+            intensity={2}
+            listAttrs={{ "data-reveal": "stagger" }}
+            items={site.serviceGroups.map((g) => ({
+              id: g.id,
+              title: g.title,
+              sub: g.sub,
+              href: "#bang-gia",
+              image: { src: g.image, alt: g.alt },
+              focus: g.focus,
+            }))}
+          />
+        </div>
       </div>
 
       <Wave

@@ -320,15 +320,6 @@ export function MotionSystem() {
           });
         });
 
-        /* ---------- Ảnh dịch vụ: thu nhỏ dần khi cuộn vào ---------- */
-        q("[data-scale-in]").forEach((el) => {
-          gsap.fromTo(
-            el,
-            { scale: 1.18 },
-            { scale: 1, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "center 55%", scrub: true } },
-          );
-        });
-
         /* ---------- Gallery cuộn ngang có ghim (chỉ desktop ≥ 1024px) ---------- */
         if (window.matchMedia("(min-width: 1024px)").matches) {
           q("[data-hscroll]").forEach((section) => {

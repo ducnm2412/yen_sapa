@@ -182,21 +182,11 @@ dd {
 }
 
 /* Thẻ: nhấc lên, viền vàng hiện dần, ánh sáng lan nhẹ */
-.service-card,
 .lift-card,
 .usp-card {
   transition:
     transform 0.7s var(--ease-luxe),
     box-shadow 0.7s var(--ease-luxe);
-}
-.service-card {
-  box-shadow: inset 0 0 0 1px transparent;
-}
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    inset 0 0 0 1px rgb(216 192 138 / 0.45),
-    0 24px 60px -20px rgb(216 192 138 / 0.35);
 }
 .lift-card {
   box-shadow: 0 1px 0 rgb(43 42 38 / 0.06);
@@ -224,7 +214,6 @@ dd {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .service-card:hover,
   .lift-card:hover {
     transform: none;
   }
@@ -357,20 +346,6 @@ dd {
 }
 .nav-link[aria-current] {
   opacity: 1;
-}
-
-/* Lớp phủ thẻ dịch vụ: chỉ khi có chuột */
-@media (hover: hover) and (pointer: fine) {
-  .service-card:hover .card-overlay {
-    opacity: 1;
-  }
-  .card-pill {
-    transform: translateY(12px);
-    transition: transform 0.7s var(--ease-luxe);
-  }
-  .service-card:hover .card-pill {
-    transform: translateY(0);
-  }
 }
 
 details > summary {

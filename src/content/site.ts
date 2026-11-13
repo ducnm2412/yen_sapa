@@ -193,6 +193,7 @@ export const site = {
       sub: "Facial & Treatment Level 1–3",
       image: "/images/services/skincare-led.jpg",
       alt: "Chăm sóc da mặt dưới máy ánh sáng sinh học tại Yên Spa",
+      focus: "30% 50%",
     },
     {
       id: "body",
@@ -200,6 +201,7 @@ export const site = {
       sub: "Massage Aroma · Đá nóng · Healing",
       image: "/images/services/body-massage.jpg",
       alt: "Kỹ thuật viên massage body cho khách",
+      focus: "70% 50%",
     },
     {
       id: "toc",
@@ -207,6 +209,7 @@ export const site = {
       sub: "Gội dưỡng sinh · Detox · Muse Care",
       image: "/images/services/hair-care-massage.jpg",
       alt: "Gội đầu dưỡng sinh và massage đầu",
+      focus: "65% 50%",
     },
     {
       id: "triet-long",
@@ -214,6 +217,7 @@ export const site = {
       sub: "Trải nghiệm vùng nách 49K",
       image: "/images/services/hair-removal-session.jpg",
       alt: "Buổi triệt lông OPT tại Yên Spa",
+      focus: "65% 50%",
     },
   ],
   process: [
