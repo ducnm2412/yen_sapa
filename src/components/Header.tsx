@@ -49,21 +49,19 @@ export function Header() {
         <a
           data-hero="logo"
           href="#trang-chu"
-          className="flex items-center gap-3"
+          className="flex items-center gap-2.5 sm:gap-3"
           aria-label={`${site.name} — về đầu trang`}
         >
           <Image
             src="/images/brand/logo-red-mark.png"
             alt=""
-            width={44}
-            height={44}
-            className="size-10 rounded-full object-cover ring-1 ring-white/40 sm:size-11"
+            width={48}
+            height={48}
+            className="size-10 rounded-full ring-1 ring-white/50 min-[400px]:size-11 sm:size-12"
           />
-          <span className="font-logo text-xl leading-none font-medium tracking-wide whitespace-nowrap sm:text-2xl">
-            Yên{" "}
-            <span className="hidden text-sm tracking-[0.2em] uppercase opacity-80 min-[400px]:inline">
-              Spa + Beaute
-            </span>
+          {/* Tên doanh nghiệp: một kiểu chữ duy nhất, rõ ràng */}
+          <span className="text-[15px] leading-none font-semibold tracking-tight whitespace-nowrap min-[400px]:text-lg sm:text-xl">
+            {site.name}
           </span>
         </a>
 
@@ -83,7 +81,7 @@ export function Header() {
         </nav>
 
         <div data-hero="nav" className="flex items-center gap-2 md:hidden">
-          <a href={site.bookingAnchor} className="rounded-full bg-moss-700 px-4 py-2 text-sm font-semibold whitespace-nowrap text-white">
+          <a href={site.bookingAnchor} className="rounded-full bg-moss-700 px-4 py-2 text-sm font-semibold whitespace-nowrap text-white max-[359px]:hidden">
             Đặt lịch
           </a>
           <button
