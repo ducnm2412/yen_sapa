@@ -5,12 +5,19 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { PosterRail } from "@/components/PosterRail";
 import { menus } from "@/content/promo";
 import { noOrphan } from "@/lib/text";
+import { Leaf } from "@/components/NatureDecor";
 
 /** Bảng giá dạng chữ (PRICE-01..03, 05). Nguồn: menu áp dụng từ 15/05/2025 trên ảnh của khách. */
 export function PricingSection() {
   const p = site.pricing;
   return (
-    <section id="bang-gia" className="relative bg-[#f4ece0] px-4 pt-6 pb-16 sm:px-6 sm:pt-10 sm:pb-20">
+    <section
+      id="bang-gia"
+      className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#f4ece0_0%,#e6eed2_14%,#edf2e2_55%,#e9efda_85%,#f4ece0_100%)] px-4 pt-16 pb-24 sm:px-6 sm:pt-24 sm:pb-32"
+    >
+      {/* Nền xanh thiên nhiên: quầng sáng lá + chùm lá góc trên phải */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(60%_40%_at_85%_8%,rgba(150,196,90,0.28),transparent_70%),radial-gradient(50%_35%_at_10%_55%,rgba(120,170,80,0.18),transparent_70%)]" />
+      <Leaf name="leaves-top-right" className="top-0 right-0 w-36 translate-x-[12%] -translate-y-[6%] sm:w-56 lg:w-72" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Bảng giá"
@@ -63,7 +70,9 @@ export function PricingSection() {
         <p data-reveal="fade-up" className="mt-5 text-sm text-muted">{p.comboNote}</p>
 
         {/* Bảng giá lẻ: accordion thuần HTML, đọc được trên mobile không cần phóng to */}
-        <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div className="relative mt-20 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+          <Leaf name="fern-top-left" className="top-0 right-full hidden w-56 translate-x-[2%] lg:block xl:w-72" />
+          <Leaf name="fern-top-right" className="-top-10 left-full w-28 -translate-x-[30%] sm:w-40 lg:w-52" />
           <div>
             <h3 data-reveal="words" className="font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900">
               Bảng giá dịch vụ lẻ
@@ -124,7 +133,9 @@ export function PricingSection() {
             ))}
           </div>
         </div>
-        <div className="mt-14">
+        <div className="relative mt-14">
+          <Leaf name="fern-bottom-left" className="-bottom-40 right-full hidden w-44 translate-x-[12%] lg:block xl:w-56" />
+          <Leaf name="fern-bottom-right" className="-bottom-36 left-full w-40 -translate-x-[22%] sm:w-56 lg:w-72" />
           <h3 data-reveal="fade-up" className="font-sans text-2xl font-semibold text-moss-900">Menu bảng giá chi tiết</h3>
           <div className="mt-6">
             <PosterRail images={menus} label="Ảnh menu bảng giá" itemClassName="w-[78%] sm:w-[42%] lg:w-[23%]" />

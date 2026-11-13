@@ -8,6 +8,7 @@ import { useLightbox } from "@/components/Lightbox";
 import { RollText } from "@/components/motion/RollText";
 import { SplitWords } from "@/components/motion/Split";
 import { noOrphan } from "@/lib/text";
+import { Leaf as LeafDecor, LeafShadowTexture } from "@/components/NatureDecor";
 
 /** 4 ô ảnh sạch (không có chữ in sẵn) cho lưới 2x2 bên phải. */
 const tiles = [
@@ -34,7 +35,11 @@ export function BentoShowcase() {
   const comboIndex = site.pricing.combos.indexOf(combo) + 1;
 
   return (
-    <section id="san-pham" className="relative bg-[#f4ece0] px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-28">
+    <section id="san-pham" className="relative isolate overflow-hidden bg-[#f6efe6] px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-28">
+      {/* Nền thiên nhiên: bóng lá cọ mờ + cụm lá ở góc */}
+      <LeafShadowTexture className="opacity-45" />
+      <LeafDecor name="palm-top-left" className="top-0 left-0 w-28 -translate-x-1/4 -translate-y-1/4 opacity-80 sm:w-40 xl:w-52 xl:-translate-x-[20%] xl:-translate-y-[15%]" />
+      <LeafDecor name="monstera-bottom-right" className="right-0 bottom-0 w-36 translate-x-1/4 translate-y-[8%] sm:w-52 lg:w-64" />
       <div className="mx-auto max-w-6xl">
         {/* ---------- Hero chia đôi 45/55 ---------- */}
         <div className="grid items-center gap-10 lg:grid-cols-[0.82fr_1fr] lg:gap-12">
