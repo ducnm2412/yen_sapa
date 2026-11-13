@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PosterRail } from "@/components/PosterRail";
 import { menus } from "@/content/promo";
+import { noOrphan } from "@/lib/text";
 
 /** Bảng giá dạng chữ (PRICE-01..03, 05). Nguồn: menu áp dụng từ 15/05/2025 trên ảnh của khách. */
 export function PricingSection() {
@@ -42,7 +43,7 @@ export function PricingSection() {
                 {c.parts.map((part) => (
                   <li key={part} className="flex gap-2.5">
                     <Check className="mt-0.5 size-4 shrink-0 text-gold-500" aria-hidden="true" />
-                    {part}
+                    {noOrphan(part)}
                   </li>
                 ))}
               </ul>
@@ -87,7 +88,7 @@ export function PricingSection() {
                 {p.memberPerks.map((perk) => (
                   <li key={perk} className="flex gap-2">
                     <Check className="mt-0.5 size-4 shrink-0 text-gold-300" aria-hidden="true" />
-                    {perk}
+                    {noOrphan(perk)}
                   </li>
                 ))}
               </ul>

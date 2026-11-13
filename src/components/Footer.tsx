@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/content/site";
+import { noOrphan } from "@/lib/text";
 import { FacebookIcon, MessengerIcon, ZaloIcon } from "@/components/icons/BrandIcons";
 
 /** Footer tối 4 cột theo mẫu + thanh bản quyền và "Lên đầu trang". */
@@ -37,7 +38,7 @@ export function Footer() {
                 <address className="not-italic">
                   <a href={b.mapsUrl} target="_blank" rel="noopener noreferrer" className="flex gap-2 text-beige-200 hover:text-white">
                     <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-                    {b.address}
+                    {noOrphan(b.address)}
                   </a>
                 </address>
               </li>

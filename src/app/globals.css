@@ -41,6 +41,21 @@ body {
   color: var(--color-ink);
 }
 
+/* Không để một chữ trơ trọi xuống dòng: tiêu đề ngắt cân đối, đoạn văn tránh chữ mồ côi */
+h1,
+h2,
+h3,
+h4,
+blockquote {
+  text-wrap: balance;
+}
+p,
+li,
+figcaption,
+dd {
+  text-wrap: pretty;
+}
+
 /* Thanh nút nổi: hiệu ứng bằng CSS để vẫn hiển thị khi chưa có JavaScript */
 @keyframes rise-in {
   from {

@@ -7,16 +7,28 @@ import { Fragment } from "react";
  */
 export function SplitWords({ text, dim = [] }: { text: string; /** chỉ số các từ hiển thị nhạt */ dim?: number[] }) {
   const words = text.split(" ");
+  const word = (i: number) => (
+    <span className="split-word">
+      <span className={dim.includes(i) ? "split-inner word-dim" : "split-inner"}>{words[i]}</span>
+    </span>
+  );
+  // Ghép 2 từ cuối vào một khối không ngắt dòng để không bao giờ có 1 chữ trơ trọi ở dòng cuối
+  // (mỗi từ là inline-block nên không dùng được &nbsp;).
+  const glue = words.length >= 3 ? 2 : 0;
+  const head = words.length - glue;
   return (
     <>
-      {words.map((w, i) => (
+      {words.slice(0, head).map((_, i) => (
         <Fragment key={i}>
-          <span className="split-word">
-            <span className={dim.includes(i) ? "split-inner word-dim" : "split-inner"}>{w}</span>
-          </span>
+          {word(i)}
           {i < words.length - 1 ? " " : null}
         </Fragment>
       ))}
+      {glue > 0 && (
+        <span className="whitespace-nowrap">
+          {word(head)} {word(head + 1)}
+        </span>
+      )}
     </>
   );
 }
