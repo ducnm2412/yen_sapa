@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { site } from "@/content/site";
-import { Wave } from "@/components/Wave";
 import { HeroVideoReel } from "@/components/HeroVideoReel";
 
 export function Hero() {
   return (
-    <section id="trang-chu" className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-moss-900">
+    <section id="trang-chu" className="relative isolate h-svh overflow-hidden bg-moss-900">
       {/* Ảnh LCP: luôn hiển thị; chỉ mở mặt nạ clip-path + scale và parallax bằng transform */}
       <div data-hero-parallax className="absolute inset-0 -z-10">
         <div data-hero-image className="absolute inset-0 will-change-transform">
@@ -39,7 +38,7 @@ export function Hero() {
         href="#gioi-thieu"
         data-hero="fade"
         aria-label="Cuộn xuống phần giới thiệu"
-        className="absolute bottom-[clamp(84px,11vw,160px)] left-1/2 z-[2] hidden -translate-x-1/2 items-center gap-4 text-white md:flex"
+        className="absolute bottom-10 left-1/2 z-[2] hidden -translate-x-1/2 items-center gap-4 text-white md:flex"
       >
         <span className="h-px w-16 bg-gradient-to-r from-transparent to-white/60" aria-hidden="true" />
         <span className="grid size-12 place-items-center rounded-full border border-white/60 backdrop-blur-sm transition-colors hover:border-gold-300">
@@ -47,14 +46,6 @@ export function Hero() {
         </span>
         <span className="h-px w-16 bg-gradient-to-l from-transparent to-white/60" aria-hidden="true" />
       </a>
-
-      <Wave
-        layers={[
-          { fill: "#d8c08a", base: 46, amp: 22, phase: 0.9, opacity: 0.3 },
-          { fill: "#ece2d0", base: 66, amp: 20, phase: 2.1, opacity: 0.75 },
-          { fill: "#f8f3ea", base: 86, amp: 18, phase: 1.2 },
-        ]}
-      />
     </section>
   );
 }
