@@ -61,6 +61,8 @@ export const site = {
   slogans: ["Dưỡng sinh toàn diện", "Chăm da khoa học", "Yêu mình một cách Yên lành"],
   about: {
     heading: "Dưỡng sinh toàn diện, chăm da khoa học",
+    /** Bản rút gọn hiển thị ở section Về Yên Spa */
+    lead: "Từ năm 2019, Yên Spa & Beaute chăm sóc da, tóc và cơ thể theo hướng khoa học — để mỗi người được yêu mình một cách Yên lành.",
     paragraphs: [
       "Từ năm 2019, Yên Spa & Beaute chăm sóc sức khỏe và làm đẹp theo hướng khoa học, với hai chi nhánh tại Quận 3 và Phú Nhuận. Yên tin rằng làn da, mái tóc và cơ thể là những yếu tố nuôi dưỡng tính nữ — và mỗi người xứng đáng được yêu mình một cách Yên lành.",
       "Các gói treatment được chuyên viên tư vấn và chọn theo đúng tình trạng da của bạn, thay vì tự chọn, để tránh kích ứng. Mỗi khách dùng khăn lau, bông và kim mới; sản phẩm đến từ các dòng chuyên nghiệp như Christina, Dermafirm, Image và Batious.",

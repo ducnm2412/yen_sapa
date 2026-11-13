@@ -11,7 +11,7 @@ const statIcons = [Sparkles, MapPin, Leaf];
 export function AboutSection() {
   const stats = [
     { value: site.since, from: 2010, suffix: "", label: "Năm thành lập" },
-    { value: 2, from: 0, suffix: "", label: "Chi nhánh tại TP.HCM" },
+    { value: 2, from: 0, suffix: "", label: "Chi nhánh" },
     { value: 4, from: 0, suffix: "", label: "Mảng chăm sóc" },
   ];
   return (
@@ -24,13 +24,13 @@ export function AboutSection() {
             </span>
             <span data-reveal="line" className="h-px w-10 origin-left bg-moss-700/50" aria-hidden="true" />
           </p>
-          <h2 data-reveal="words" className="mt-5 font-serif text-4xl leading-[1.12] font-medium text-moss-900 sm:text-5xl">
+          <h2 data-reveal="words" className="mt-5 font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900 sm:text-4xl">
             <SplitWords text="Dưỡng sinh toàn diện," />
             <br />
             <SplitWords text="chăm da khoa học" />
           </h2>
-          <p data-scrub-text className="mt-5 max-w-md leading-relaxed text-muted">
-            <SplitWords text={site.about.paragraphs[0]} />
+          <p data-reveal="fade-up" className="mt-5 max-w-md text-[17px] leading-relaxed text-ink">
+            {site.about.lead}
           </p>
           <a
             data-reveal="fade-up"
@@ -45,9 +45,9 @@ export function AboutSection() {
             {stats.map((s, i) => {
               const Icon = statIcons[i];
               return (
-                <div key={s.label} className="flex flex-col-reverse items-center text-center">
-                  <dt className="mt-1 text-xs leading-snug text-muted">{s.label}</dt>
-                  <dd className="font-serif text-2xl text-moss-900">
+                <div key={s.label} className="flex flex-col-reverse items-center justify-end text-center">
+                  <dt className="mt-1 text-sm leading-snug text-muted">{s.label}</dt>
+                  <dd className="font-sans text-2xl font-semibold text-moss-900 tabular-nums lining-nums">
                     <Icon className="mx-auto mb-2 size-5 text-moss-600" strokeWidth={1.4} aria-hidden="true" />
                     <span data-counter={s.value} data-counter-from={s.from}>
                       {s.value}
@@ -64,7 +64,7 @@ export function AboutSection() {
           {/* Số "01" viền mảnh phía sau */}
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -top-10 -right-2 font-serif text-[9rem] leading-none text-transparent [-webkit-text-stroke:1px_rgba(54,66,44,0.18)] sm:text-[11rem]"
+            className="pointer-events-none absolute -top-10 -right-2 font-sans text-[9rem] font-semibold leading-none text-transparent [-webkit-text-stroke:1px_rgba(54,66,44,0.18)] sm:text-[11rem]"
           >
             01
           </span>
@@ -96,7 +96,7 @@ export function AboutSection() {
             className="lift-card absolute right-0 bottom-16 flex items-center gap-6 rounded-2xl bg-beige-50/95 py-4 pr-4 pl-5 shadow-xl backdrop-blur"
           >
             <span>
-              <span className="block font-serif text-lg text-moss-900">Chăm da khoa học</span>
+              <span className="block font-sans text-base font-semibold text-moss-900">Chăm da khoa học</span>
               <span className="block text-xs text-muted">Trong từng bước chăm sóc</span>
             </span>
             <span className="grid size-9 place-items-center rounded-full bg-moss-700 text-white">
