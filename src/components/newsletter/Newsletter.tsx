@@ -69,10 +69,10 @@ function ServiceRow({ title, text }: { title: string; text: string }) {
   );
 }
 
-function Divider() {
+function Divider({ quiet }: { quiet?: boolean }) {
   return (
     <div className="flex justify-center py-8" aria-hidden="true">
-      <span data-reveal="line" className="h-px w-24 origin-center bg-gold-500/60" />
+      <span data-reveal={quiet ? undefined : "line"} className="h-px w-24 origin-center bg-gold-500/60" />
     </div>
   );
 }
@@ -133,7 +133,7 @@ function ImageCard({
       <div
         data-reveal="clip-up"
         data-parallax={parallax ? "30" : undefined}
-        className={clsx("group relative block h-[370px] overflow-hidden", arch ? "rounded-t-[999px] rounded-b-[16px]" : "rounded-[16px]")}
+        className={clsx("group relative block h-[370px] overflow-hidden", arch ? "rounded-t-[999px] rounded-b-sm" : "rounded-sm")}
       >
         <div data-parallax-inner={parallax ? "" : undefined} className={clsx("absolute inset-x-0", parallax ? "-inset-y-8" : "inset-y-0")}>
           <Image
@@ -159,7 +159,7 @@ export function Newsletter() {
 
   return (
     <div className="min-h-dvh bg-beige-200 sm:px-4 sm:py-10">
-      <div className="mx-auto max-w-[640px] overflow-hidden shadow-[0_30px_80px_-40px_rgb(38_48_31/0.45)] ring-1 ring-moss-900/10 sm:rounded-[20px]">
+      <div className="mx-auto max-w-[640px] overflow-hidden shadow-[0_30px_80px_-40px_rgb(38_48_31/0.45)] ring-1 ring-moss-900/10 sm:rounded-sm">
         <main className="bg-beige-50 text-moss-900">
           {/* ---------- Section 1: Hero ---------- */}
           <section
@@ -239,7 +239,7 @@ export function Newsletter() {
 
           {/* ---------- Section 2: Banner mặt tiền ---------- */}
           <section aria-label="Mặt tiền Yên Spa & Beaute" className="px-4 pt-8 sm:px-8">
-            <div data-reveal="strips" className="relative overflow-hidden rounded-[14px]">
+            <div data-reveal="strips" className="relative overflow-hidden rounded-sm">
               <Image
                 src="/images/brand/banner-storefront.jpg"
                 alt="Mặt tiền Yên Spa & Beauté tại 160 Hoa Lan, kèm thông tin: chăm sóc body, mặt, tóc, triệt lông; since 2019, 2 chi nhánh — CN1 60A Cao Thắng, Quận 3, 0899 60 7279; CN2 160 Hoa Lan, Phú Nhuận, 0896 40 7578; giờ hoạt động 9:00–21:00"
@@ -292,7 +292,7 @@ export function Newsletter() {
 
           {/* ---------- Section 4: Không gian + điểm khác biệt ---------- */}
           <section id="khong-gian">
-            <h2 data-reveal="words" className={clsx(sectionTitle, "px-9 pb-7")}>
+            <h2 data-reveal="blur-words" className={clsx(sectionTitle, "px-9 pb-7")}>
               <SplitWords text="Một khoảng lặng" />
               <br />
               <SplitWords text="giữa thành phố" />
@@ -315,15 +315,15 @@ export function Newsletter() {
               ))}
             </ul>
           </section>
-          <Divider />
+          <Divider quiet />
 
           {/* ---------- Section 5: Đặt lịch 3 bước ---------- */}
           <section id="dat-lich">
-            <h2 data-reveal="words" className={clsx(sectionTitle, "px-9 pb-8")}>
+            <h2 data-reveal="blur-words" className={clsx(sectionTitle, "px-9 pb-8")}>
               <SplitWords text="Đặt lịch chỉ trong vài phút" />
             </h2>
             <div className="px-6 pb-12 sm:px-[76px]">
-              <ol data-reveal="stagger" className="mx-auto max-w-[489px]">
+              <ol data-reveal="mask-right" className="mx-auto max-w-[489px]">
                 <Step n={1} title="Chọn chi nhánh gần bạn" text="Quận 3 (60A Cao Thắng) hoặc Phú Nhuận (160 Hoa Lan)." />
                 <Step n={2} title="Gọi hoặc nhắn tin" text="Cho Yên biết tình trạng da và khung giờ bạn muốn đến." />
                 <Step n={3} title="Nhận tư vấn và giờ hẹn" text="Yên tư vấn liệu trình phù hợp và xác nhận lịch với bạn." />
@@ -333,7 +333,7 @@ export function Newsletter() {
 
           {/* ---------- Section 6: Thẻ CTA ---------- */}
           <section className="px-5 pb-12 sm:px-14">
-            <div data-reveal="fade-up" className="relative overflow-hidden rounded-[16px] bg-moss-900 px-8 py-12 text-center text-beige-50">
+            <div data-reveal="fade-up" className="relative overflow-hidden rounded-sm bg-moss-900 px-8 py-12 text-center text-beige-50">
               <span aria-hidden="true" className="absolute -top-24 -right-24 size-72 rounded-full bg-[radial-gradient(circle,rgba(216,192,138,1),transparent_65%)] opacity-20" />
               <h2 className="relative mb-3 font-serif text-[2.4rem] leading-[1.1] sm:text-[46px]">
                 Sẵn sàng chăm sóc
@@ -371,7 +371,7 @@ export function Newsletter() {
               <Wordmark width={110} />
             </a>
           </div>
-          <div data-reveal="stagger" className="grid gap-6 pb-8 text-[14px] leading-[1.6] sm:grid-cols-2">
+          <div className="grid gap-6 pb-8 text-[14px] leading-[1.6] sm:grid-cols-2">
             {[
               { b: q3, label: "Chi nhánh 1, Quận 3", addr: "60A Cao Thắng, Phường Bàn Cờ" },
               { b: pn, label: "Chi nhánh 2, Phú Nhuận", addr: "160 Hoa Lan, Phường Cầu Kiệu" },

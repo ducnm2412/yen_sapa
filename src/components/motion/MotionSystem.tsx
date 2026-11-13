@@ -13,8 +13,8 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
  *
  * data-hero="logo|nav|eyebrow|heading|tagline|fade|cta"  — trình tự mở màn
  * data-hero-image                                          — ảnh hero (không ẩn: là ảnh LCP)
- * data-hero-glow                                           — đốm sáng vàng trôi chậm
- * data-reveal="fade-up|blur|words|chars|clip-up|clip-center|line|stagger"
+ * data-hero-palm                                           — lớp bóng lá cọ trôi chậm theo cuộn
+ * data-reveal="fade-up|blur|words|blur-words|chars|clip-up|clip-center|line|stagger|strips|slide-left|mask-right"
  * data-parallax="<số px>"                                  — phần tử con [data-parallax-inner] trôi chậm hơn scroll
  * data-bg-from="<màu>"                                     — section đổi màu nền khi cuộn vào
  * data-marquee                                             — dải chữ chạy vô hạn, dừng khi khuất màn hình
@@ -127,24 +127,18 @@ export function MotionSystem() {
             scrollTrigger: { trigger: heroSection, start: "center center", end: "bottom top", scrub: true },
           });
 
-          // Đốm sáng vàng trôi chậm — chỉ chạy khi hero còn trên màn hình
-          const glows = q("[data-hero-glow]").map((el, i) =>
-            gsap.to(el, {
-              x: i ? -60 : 70,
-              y: i ? 40 : -50,
-              scale: i ? 1.15 : 0.9,
-              duration: 9 + i * 3,
-              ease: "sine.inOut",
-              repeat: -1,
-              yoyo: true,
-            }),
+          // Bóng lá cọ trôi chậm theo cuộn (không đổi opacity; giảm biên độ trên mobile)
+          gsap.fromTo(
+            "[data-hero-palm]",
+            { yPercent: -3, xPercent: 0, rotation: 0 },
+            {
+              yPercent: 7 * parallaxScale,
+              xPercent: -2 * parallaxScale,
+              rotation: 1.2,
+              ease: "none",
+              scrollTrigger: { trigger: heroSection, start: "top top", end: "bottom top", scrub: true },
+            },
           );
-          ScrollTrigger.create({
-            trigger: heroSection,
-            start: "top bottom",
-            end: "bottom top",
-            onToggle: (self) => glows.forEach((t) => (self.isActive ? t.resume() : t.pause())),
-          });
         }
 
         /* ---------- Reveal khi cuộn (ScrollTrigger.batch để giữ ít trigger) ---------- */
@@ -202,6 +196,12 @@ export function MotionSystem() {
           "[data-reveal='clip-center']",
           { clipPath: "inset(0% 50% 0% 50%)", autoAlpha: 0.4 },
           { clipPath: "inset(0% 0% 0% 0%)", autoAlpha: 1, duration: 1.3 },
+        );
+        reveal("[data-reveal='slide-left']", { autoAlpha: 0, x: 40 }, { autoAlpha: 1, x: 0, duration: 1.1 });
+        reveal(
+          "[data-reveal='mask-right']",
+          { clipPath: "inset(0% 100% 0% 0%)" },
+          { clipPath: "inset(0% 0% 0% 0%)", duration: 1.2 },
         );
         reveal(
           "[data-reveal='stagger']",

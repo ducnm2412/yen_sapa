@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Phone, Star } from "lucide-react";
 import { site } from "@/content/site";
 import { ZaloIcon } from "@/components/icons/BrandIcons";
 import { RollText } from "@/components/motion/RollText";
+import { SIG305 } from "@/components/signature/SIG-305/SIG-305";
 import { noOrphan } from "@/lib/text";
 
 const initials = (name: string) =>
@@ -42,16 +43,20 @@ export function ReviewsSection() {
             <span className="inline-block rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.25em] text-beige-100 uppercase ring-1 ring-beige-100/60">
               <span className="shiny-text">Khách hàng nói gì</span>
             </span>
-            <p data-reveal="fade-up" className="mt-6 text-3xl leading-snug font-semibold tracking-tight text-beige-50 sm:text-[2.6rem] sm:leading-[1.2]">
-              “Chắc chắn phải gặp Yên mỗi cuối tuần để <span className="mark-sweep text-white">chữa{" "}lành</span>{" "}thôi{" "}ạ.”
-            </p>
+            {/* Câu trích thật từ review Google của Trang Minh, tô từng dòng khi cuộn (SIG-305, không ghim) */}
+            <SIG305
+              variant="inline"
+              intensity={1}
+              lines={["“Chắc chắn phải gặp Yên", "mỗi cuối tuần để", "chữa lành thôi ạ.”"]}
+              className="mt-6 text-3xl leading-snug font-semibold tracking-tight text-beige-50 [--sig-hl:rgb(216_192_138/0.45)] sm:text-[2.6rem] sm:leading-[1.2]"
+            />
             <p className="mt-4 text-sm text-beige-200">
               {reviews[0].author} · {reviews[0].meta}
             </p>
           </div>
 
           {/* Thẻ review trượt */}
-          <figure className="relative overflow-hidden rounded-3xl bg-beige-50 text-ink shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] sm:grid sm:grid-cols-[0.8fr_1.2fr]">
+          <figure className="relative overflow-hidden rounded-sm bg-beige-50 text-ink shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] sm:grid sm:grid-cols-[0.8fr_1.2fr]">
             <div className="relative hidden sm:block">
               <Image src="/images/services/massage-mat.jpg" alt="" fill sizes="20vw" className="object-cover object-[center_45%]" />
             </div>

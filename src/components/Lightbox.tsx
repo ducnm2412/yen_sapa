@@ -78,7 +78,7 @@ export function useLightbox(images: readonly LightboxImage[]) {
               width={current.width}
               height={current.height}
               sizes="100vw"
-              className="h-auto max-h-[calc(100dvh-6rem)] w-auto max-w-full rounded-lg object-contain"
+              className="h-auto max-h-[calc(100dvh-6rem)] w-auto max-w-full rounded-sm object-contain"
             />
           </div>
           <p className="absolute inset-x-0 bottom-4 text-center text-sm text-white/80">
@@ -137,7 +137,7 @@ export function LightboxThumb({
       type="button"
       onClick={onOpen}
       className={clsx(
-        "group relative block w-full overflow-hidden rounded-2xl bg-beige-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss-700",
+        "group relative block w-full overflow-hidden rounded-sm bg-beige-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss-700",
         className,
       )}
       aria-label={`Phóng to ảnh: ${img.alt}`}

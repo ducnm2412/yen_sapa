@@ -102,3 +102,4 @@ Resume file: .planning/phases/01-foundation-live-conversion-path/01-CONTEXT.md
 | ID | Date | Task | Dir |
 |----|------|------|-----|
 | 261113-ebo | 2026-11-13 | Hero: nền 3 video chia 3 cột | .planning/quick/261113-ebo-hero-3-video-gioi-thieu |
+| 261113-jgz | 2026-11-13 | Phôi B "Nắng xuyên lá": SIG-01/505/305, bóng lá cọ hero, giảm lặp reveal | .planning/quick/261113-jgz-phoi-b-nang-xuyen-la-hieu-ung |

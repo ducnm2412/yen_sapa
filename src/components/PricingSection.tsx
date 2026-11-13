@@ -23,17 +23,19 @@ export function PricingSection() {
           eyebrow="Bảng giá"
           title="Combo best~seller — tiết~kiệm đến~30%"
           dim={[3, 4, 5, 6]}
+          titleEffect="none"
+          quiet
           text="Trọn vẹn body, tóc và da mặt trong một lần ghé Yên."
         />
 
         {/* Combo */}
-        <ul data-reveal="stagger" className="mt-12 grid gap-6 md:grid-cols-3">
+        <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {p.combos.map((c, i) => (
             <li
               key={c.name}
               data-spotlight
               className={clsx(
-                "lift-card relative flex flex-col rounded-[2rem] p-7 sm:p-8",
+                "lift-card relative flex flex-col rounded-sm p-7 sm:p-8",
                 "featured" in c && c.featured ? "shine-border bg-moss-900 text-beige-100 md:-mt-6 md:mb-6" : "bg-beige-50 text-ink",
               )}
             >
@@ -68,20 +70,20 @@ export function PricingSection() {
             </li>
           ))}
         </ul>
-        <p data-reveal="fade-up" className="mt-5 text-sm text-muted">{p.comboNote}</p>
+        <p className="mt-5 text-sm text-muted">{p.comboNote}</p>
 
         {/* Bảng giá lẻ: accordion thuần HTML, đọc được trên mobile không cần phóng to */}
         <div className="relative mt-20 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Leaf name="fern-top-left" className="top-0 right-full hidden w-56 translate-x-[2%] lg:block xl:w-72" />
           <Leaf name="fern-top-right" className="-top-10 left-full w-28 -translate-x-[30%] sm:w-40 lg:w-52" />
           <div>
-            <h3 data-reveal="words" className="font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900">
+            <h3 className="font-sans text-3xl leading-tight font-semibold tracking-tight text-moss-900">
               Bảng giá dịch vụ lẻ
             </h3>
-            <p data-reveal="fade-up" className="mt-3 text-sm leading-relaxed text-muted">{p.note}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">{p.note}</p>
 
             {/* Thẻ thành viên */}
-            <div data-reveal="fade-up" className="mt-10 rounded-[2rem] bg-moss-900 p-7 text-beige-100 sm:p-8">
+            <div className="mt-10 rounded-sm bg-moss-900 p-7 text-beige-100 sm:p-8">
               <p className="text-xs font-semibold tracking-[0.3em] text-gold-300 uppercase">Thẻ ưu đãi Member</p>
               <p className="mt-2 font-sans text-xl font-semibold text-white">Nạp một lần — nhận thêm đến {noOrphan("40% giá~trị")}</p>
               <ul className="mt-6 divide-y divide-white/10">
@@ -106,9 +108,9 @@ export function PricingSection() {
             </div>
           </div>
 
-          <div data-reveal="stagger" className="space-y-3">
+          <div className="space-y-3">
             {p.menus.map((m, i) => (
-              <details key={m.title} open={i === 0} className="group rounded-2xl bg-beige-50 ring-1 ring-beige-200 open:ring-gold-500/40">
+              <details key={m.title} open={i === 0} className="group rounded-sm bg-beige-50 ring-1 ring-beige-200 open:ring-gold-500/40">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 font-sans text-lg font-semibold text-moss-900 sm:px-6">
                   {noOrphan(m.title)}
                   <ChevronDown
@@ -137,9 +139,9 @@ export function PricingSection() {
         <div className="relative mt-14">
           <Leaf name="fern-bottom-left" className="-bottom-40 right-full hidden w-44 translate-x-[12%] lg:block xl:w-56" />
           <Leaf name="fern-bottom-right" className="-bottom-36 left-full w-40 -translate-x-[22%] sm:w-56 lg:w-72" />
-          <h3 data-reveal="fade-up" className="font-sans text-2xl font-semibold text-moss-900">Menu bảng giá chi tiết</h3>
+          <h3 className="font-sans text-2xl font-semibold text-moss-900">Menu bảng giá chi tiết</h3>
           <div className="mt-6">
-            <PosterRail images={menus} label="Ảnh menu bảng giá" itemClassName="w-[78%] sm:w-[42%] lg:w-[23%]" />
+            <PosterRail images={menus} label="Ảnh menu bảng giá" reveal="none" itemClassName="w-[78%] sm:w-[42%] lg:w-[23%]" />
           </div>
         </div>
       </div>

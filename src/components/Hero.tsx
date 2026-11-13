@@ -23,9 +23,19 @@ export function Hero() {
       <HeroVideoReel />
       {/* Chỉ làm tối nhẹ mép trên để header/menu trắng vẫn đọc được */}
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden mix-blend-soft-light">
-        <div data-hero-glow className="absolute -top-24 -left-24 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(216,192,138,0.75),transparent_65%)]" />
-        <div data-hero-glow className="absolute right-[-6rem] bottom-10 size-[24rem] rounded-full bg-[radial-gradient(circle,rgba(216,192,138,0.6),transparent_65%)]" />
+      {/* Bóng lá cọ mờ, trôi chậm theo cuộn (không phải ảnh LCP nên không preload) */}
+      <div
+        data-hero-palm
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-[-4%] -top-[8%] -z-10 h-[116%] opacity-[0.3] mix-blend-multiply will-change-transform"
+      >
+        <Image
+          src="/images/nature/palm-shadow-texture.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
       </div>
 
       {/* Hero chỉ còn video; giữ h1 ẩn cho SEO và trình đọc màn hình */}

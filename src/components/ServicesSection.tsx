@@ -28,7 +28,7 @@ export function ServicesSection() {
               </span>
               <span data-reveal="line" className="h-px w-10 origin-left bg-beige-200/50" aria-hidden="true" />
             </p>
-            <h2 data-reveal="words" className="mt-4 font-sans text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+            <h2 data-reveal="blur-words" className="mt-4 font-sans text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
               <SplitWords text="Dưỡng sinh toàn diện" />
               <br />
               <SplitWords text="cho" />{" "}
@@ -37,7 +37,7 @@ export function ServicesSection() {
               </span>
             </h2>
           </div>
-          <a href="#bang-gia" data-reveal="fade-up" className="arrow-link inline-flex items-center gap-2 self-start text-sm font-medium text-beige-50 md:self-auto">
+          <a href="#bang-gia" className="arrow-link inline-flex items-center gap-2 self-start text-sm font-medium text-beige-50 md:self-auto">
             Xem bảng giá tất cả dịch vụ
             <ArrowRight className="arrow size-4" aria-hidden="true" />
           </a>
@@ -50,7 +50,7 @@ export function ServicesSection() {
               <li key={g.id}>
                 <a
                   href="#bang-gia"
-                  className="service-card group relative block aspect-[4/5] overflow-hidden rounded-2xl border border-white/15 sm:aspect-[5/6]"
+                  className="service-card group relative block aspect-[4/5] overflow-hidden rounded-sm border border-white/15 sm:aspect-[5/6]"
                 >
                   <div data-scale-in className="absolute inset-0">
                     <Image

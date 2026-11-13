@@ -9,6 +9,7 @@ import { SpaceSection } from "@/components/SpaceSection";
 import { BannerSection } from "@/components/BannerSection";
 import { PromoSection } from "@/components/PromoSection";
 import { BentoShowcase } from "@/components/BentoShowcase";
+import { BrandSentence } from "@/components/BrandSentence";
 import { FeatureMarquee } from "@/components/FeatureMarquee";
 import { Footer } from "@/components/Footer";
 import { FloatingContactBar } from "@/components/FloatingContactBar";
@@ -24,6 +25,8 @@ export default function Home() {
           <BannerSection />
           <AboutSection />
         </div>
+        {/* Câu thương hiệu đứng yên, lá trôi phía sau (SIG-01) */}
+        <BrandSentence />
         <ServicesSection />
         <PromoSection />
         {/* Bento Editorial: sản phẩm + combo + member + ưu đãi + trước/sau, rồi trải nghiệm zigzag */}

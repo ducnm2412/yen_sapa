@@ -28,6 +28,17 @@
   --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Chiều cao thanh header (h-16 / sm:h-20): các Signature dùng để ghim/sticky đúng dưới header */
+:root {
+  --header-h: 4rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 5rem;
+  }
+}
+
 html {
   scroll-padding-top: 5rem;
 }

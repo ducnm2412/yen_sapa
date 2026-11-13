@@ -15,13 +15,13 @@ export function FloatingContactBar() {
             <Phone className="size-5" aria-hidden="true" />
             Gọi
           </summary>
-          <div className="absolute bottom-[calc(100%+0.5rem)] left-2 w-64 rounded-2xl bg-white p-2 shadow-xl ring-1 ring-beige-200">
+          <div className="absolute bottom-[calc(100%+0.5rem)] left-2 w-64 rounded-sm bg-white p-2 shadow-xl ring-1 ring-beige-200">
             <p className="px-3 pt-2 pb-1 text-xs font-medium text-muted">Chọn chi nhánh để gọi</p>
             {site.branches.map((b) => (
               <a
                 key={b.id}
                 href={`tel:${b.hotlineE164}`}
-                className="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-ink hover:bg-beige-100"
+                className="flex items-center justify-between rounded-sm px-3 py-3 text-sm text-ink hover:bg-beige-100"
               >
                 <span className="font-semibold">{b.shortName}</span>
                 <span className="text-moss-700">{b.hotlineDisplay}</span>

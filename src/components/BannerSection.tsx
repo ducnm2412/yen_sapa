@@ -9,7 +9,7 @@ export function BannerSection() {
       className="sticky top-16 z-[2] bg-beige-50 px-4 pt-10 pb-10 sm:top-20 sm:px-6 sm:pt-14 sm:pb-14"
     >
       <div data-stack-inner className="origin-top will-change-transform">
-        <div data-reveal="strips" className="relative mx-auto max-w-6xl overflow-hidden rounded-[1.5rem] shadow-[0_40px_80px_-40px_rgba(38,48,32,0.45)]">
+        <div data-reveal="strips" className="relative mx-auto max-w-6xl overflow-hidden rounded-sm shadow-[0_40px_80px_-40px_rgba(38,48,32,0.45)]">
           <Image
             src="/images/brand/banner-storefront.jpg"
             alt="Mặt tiền Yên Spa & Beauté tại 160 Hoa Lan, kèm thông tin: chăm sóc body, mặt, tóc, triệt lông; since 2019, 2 chi nhánh — CN1 60A Cao Thắng, Quận 3, 0899 60 7279; CN2 160 Hoa Lan, Phú Nhuận, 0896 40 7578; giờ hoạt động 9:00–21:00"

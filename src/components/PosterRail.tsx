@@ -11,11 +11,13 @@ export function PosterRail({
   label,
   itemClassName = "w-[78%] sm:w-[42%] lg:w-[30%]",
   aspect = "aspect-square",
+  reveal = "stagger",
 }: {
   images: readonly LightboxImage[];
   label: string;
   itemClassName?: string;
   aspect?: string;
+  reveal?: "stagger" | "mask-right" | "none";
 }) {
   const { open, dialog } = useLightbox(images);
   const track = useRef<HTMLUListElement>(null);
@@ -29,7 +31,7 @@ export function PosterRail({
       <ul
         ref={track}
         aria-label={label}
-        data-reveal="stagger"
+        data-reveal={reveal === "none" ? undefined : reveal}
         className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-4 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 [&::-webkit-scrollbar]:hidden"
       >
         {images.map((img, i) => (

@@ -9,10 +9,12 @@ export function PromoSection() {
         <SectionHeading
           eyebrow="Ưu đãi đang áp dụng"
           title="Combo & thẻ~thành~viên"
+          titleEffect="blur-words"
+          quiet
           text="Các gói kết hợp body, tóc và da mặt, cùng ưu đãi triệt lông và thẻ thành viên. Bấm vào ảnh để xem đầy đủ chi tiết."
         />
         <div className="mt-10">
-          <PosterRail images={promos} label="Poster ưu đãi" />
+          <PosterRail images={promos} label="Poster ưu đãi" reveal="mask-right" />
         </div>
       </div>
     </section>

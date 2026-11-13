@@ -33,7 +33,6 @@ export function AboutSection() {
             {site.about.lead}
           </p>
           <a
-            data-reveal="fade-up"
             href="#dich-vu"
             className="btn-shimmer mt-8 inline-flex h-11 items-center gap-2 rounded-full bg-moss-800 px-6 text-sm font-semibold text-white transition-colors hover:bg-moss-900"
           >
@@ -71,7 +70,7 @@ export function AboutSection() {
           <div
             data-reveal="strips"
             data-parallax="24"
-            className="relative mr-0 aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-[0_40px_80px_-40px_rgba(38,48,32,0.45)] sm:mr-16 md:aspect-[5/5.6]"
+            className="relative mr-0 aspect-[4/5] overflow-hidden rounded-sm shadow-[0_40px_80px_-40px_rgba(38,48,32,0.45)] sm:mr-16 md:aspect-[5/5.6]"
           >
             <div data-parallax-inner className="absolute inset-x-0 -inset-y-8">
               <Image
@@ -91,9 +90,9 @@ export function AboutSection() {
           {/* Thẻ nổi */}
           <a
             href="#dich-vu"
-            data-reveal="fade-up"
+            data-reveal="blur"
             data-delay="0.4"
-            className="lift-card absolute right-0 bottom-16 flex items-center gap-6 rounded-2xl bg-beige-50/95 py-4 pr-4 pl-5 shadow-xl backdrop-blur"
+            className="lift-card absolute right-0 bottom-16 flex items-center gap-6 rounded-sm bg-beige-50/95 py-4 pr-4 pl-5 shadow-xl backdrop-blur"
           >
             <span>
               <span className="block font-sans text-base font-semibold text-moss-900">Chăm da khoa học</span>

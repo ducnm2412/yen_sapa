@@ -43,3 +43,7 @@ next-env.d.ts
 
 # video gốc quá lớn (64MB) — chưa nén, không commit
 /public/videos/facial-head-spa.mp4
+
+# agent skills & ảnh chụp kiểm tra
+.agents/
+.planning/quick/*/shots/

@@ -45,33 +45,33 @@ export function BentoShowcase() {
         <div className="grid items-center gap-10 lg:grid-cols-[0.82fr_1fr] lg:gap-12">
           <div>
             <p className="shiny-text text-xs font-semibold tracking-[0.3em] text-burgundy uppercase">Sản phẩm & công nghệ</p>
-            <h2 data-reveal="words" className="mt-4 text-4xl leading-[1.1] font-semibold tracking-tight text-moss-900 sm:text-5xl">
+            <h2 data-reveal="words" className="mt-3 text-[32px] leading-[1.12] font-semibold tracking-tight text-moss-900 sm:mt-4 sm:text-5xl">
               <SplitWords text="Sản~phẩm chuyên~nghiệp, máy~móc hiện~đại" />
             </h2>
-            <p data-reveal="fade-up" className="mt-5 max-w-md text-[17px] leading-relaxed text-ink/80">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-ink/80 sm:mt-5 sm:text-[17px]">
               Sản phẩm Christina, ánh sáng LED và laser triệt lông được dùng <span className="mark-sweep">trực tiếp trong từng liệu{" "}trình</span>{" "}tại{" "}Yên.
             </p>
-            <div data-reveal="fade-up" className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-wrap sm:gap-3">
               <a
                 href={site.bookingAnchor}
                 data-magnetic
-                className="btn-shimmer inline-flex h-12 items-center gap-2 rounded-full bg-burgundy px-6 text-sm font-semibold whitespace-nowrap text-white shadow-[0_14px_30px_-14px_rgba(122,46,46,0.7)] transition-colors hover:bg-[#662424]"
+                className="btn-shimmer inline-flex h-12 items-center justify-center gap-2 rounded-full bg-burgundy px-4 sm:px-6 text-sm font-semibold whitespace-nowrap text-white shadow-[0_14px_30px_-14px_rgba(122,46,46,0.7)] transition-colors hover:bg-[#662424]"
               >
                 <RollText label="Đặt lịch ngay" />
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>
               <a
                 href="#dich-vu"
-                className="inline-flex h-12 items-center rounded-full bg-moss-900 px-6 text-sm font-semibold whitespace-nowrap text-white transition-colors hover:bg-moss-800"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-moss-900 px-4 sm:px-6 text-sm font-semibold whitespace-nowrap text-white transition-colors hover:bg-moss-800"
               >
                 Khám phá dịch vụ
               </a>
             </div>
-            <ul data-reveal="stagger" className="mt-8 flex flex-wrap gap-2">
+            <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 sm:mt-8 sm:gap-2">
               {trust.map(({ Icon, text }) => (
                 <li
                   key={text}
-                  className="inline-flex items-center gap-2 rounded-full bg-beige-50 px-3.5 py-2 text-[13px] font-medium whitespace-nowrap text-moss-900 ring-1 ring-beige-200"
+                  className="inline-flex items-center gap-1.5 text-[13px] font-medium whitespace-nowrap text-moss-900 sm:gap-2 sm:rounded-full sm:bg-beige-50 sm:px-3.5 sm:py-2 sm:ring-1 sm:ring-beige-200"
                 >
                   <Icon className="size-3.5 text-moss-600" aria-hidden="true" />
                   {text}
@@ -88,7 +88,7 @@ export function BentoShowcase() {
                   <button
                     type="button"
                     onClick={() => productBox.open(i)}
-                    className="lift-card group block w-full overflow-hidden rounded-2xl bg-beige-50 text-left shadow-[0_18px_40px_-28px_rgba(38,48,32,0.55)] ring-1 ring-beige-200"
+                    className="lift-card group block w-full overflow-hidden rounded-sm bg-beige-50 text-left shadow-[0_18px_40px_-28px_rgba(38,48,32,0.55)] ring-1 ring-beige-200"
                     aria-label={`Phóng to ảnh: ${t.alt}`}
                   >
                     <span className="relative block aspect-[4/3] overflow-hidden">
@@ -100,7 +100,7 @@ export function BentoShowcase() {
                         className="object-cover transition-transform duration-[1.2s] ease-(--ease-luxe) group-hover:scale-105"
                       />
                     </span>
-                    <span className="block px-3 py-3 text-center text-[13px] font-semibold whitespace-nowrap text-moss-900 sm:text-sm">
+                    <span className="block truncate px-2 py-2.5 text-center text-xs font-semibold text-moss-900 sm:px-3 sm:py-3 sm:text-sm">
                       {t.label}
                     </span>
                   </button>
@@ -114,21 +114,21 @@ export function BentoShowcase() {
         <div className="mt-6 grid gap-4 sm:mt-8 lg:grid-cols-[1.5fr_0.85fr_0.85fr] lg:grid-rows-[auto_auto]">
           {/* Combo nổi bật */}
           <article
-            data-reveal="fade-up"
+            data-reveal="slide-left"
             data-spotlight
-            className="shine-border grid overflow-hidden rounded-3xl bg-beige-50 shadow-[0_24px_60px_-36px_rgba(38,48,32,0.6)] ring-1 ring-beige-200 sm:grid-cols-[1.1fr_1fr] lg:col-start-1 lg:row-span-2"
+            className="shine-border grid overflow-hidden rounded-sm bg-beige-50 shadow-[0_24px_60px_-36px_rgba(38,48,32,0.6)] ring-1 ring-beige-200 sm:grid-cols-[1.1fr_1fr] lg:col-start-1 lg:row-span-2"
           >
-            <div className="flex flex-col p-6 sm:p-8">
+            <div className="flex flex-col p-5 sm:p-8">
               <span className="self-start rounded-full bg-burgundy px-3 py-1 text-[11px] font-semibold tracking-[0.15em] text-white uppercase">
                 <span className="shiny-text [--shine-base:#fff]">Combo bán chạy</span>
               </span>
-              <h3 className="mt-4 text-2xl leading-tight font-semibold tracking-tight text-moss-900 sm:text-3xl">
+              <h3 className="mt-3 text-xl leading-tight font-semibold tracking-tight text-moss-900 sm:mt-4 sm:text-3xl">
                 Combo {comboIndex} — {combo.name}
               </h3>
               <p className="mt-1 text-sm font-medium text-moss-700">
                 {combo.sub} · {combo.duration}
               </p>
-              <ul className="mt-4 space-y-1.5 text-sm text-ink/80">
+              <ul className="mt-3 space-y-1 text-[13px] text-ink/80 sm:mt-4 sm:space-y-1.5 sm:text-sm">
                 {combo.parts.map((p) => (
                   <li key={p} className="flex gap-2">
                     <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-gold-500" />
@@ -136,19 +136,19 @@ export function BentoShowcase() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-auto flex items-baseline gap-3 pt-6">
-                <span className="text-4xl font-semibold text-moss-900">{combo.price}</span>
+              <p className="mt-auto flex items-baseline gap-3 pt-4 sm:pt-6">
+                <span className="text-3xl font-semibold text-moss-900 sm:text-4xl">{combo.price}</span>
                 <span className="text-sm text-muted line-through">{combo.was}</span>
               </p>
               <a
                 href="#bang-gia"
-                className="mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-burgundy px-5 text-sm font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#662424]"
+                className="mt-3 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-burgundy sm:mt-4 px-5 text-sm font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#662424]"
               >
                 Xem các combo
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="relative min-h-64 sm:min-h-full">
+            <div className="relative min-h-48 sm:min-h-full">
               <Image
                 src="/images/services/massage-da-nong.jpg"
                 alt="Massage body với đá nóng tại Yên Spa"
@@ -160,7 +160,7 @@ export function BentoShowcase() {
           </article>
 
           {/* Thẻ Member */}
-          <article data-reveal="fade-up" data-spotlight className="flex flex-col rounded-3xl bg-beige-50 p-6 ring-1 ring-beige-200 lg:col-start-2 lg:row-start-1">
+          <article data-spotlight className="flex flex-col rounded-sm bg-beige-50 p-6 ring-1 ring-beige-200 lg:col-start-2 lg:row-start-1">
             <CreditCard className="size-6 text-moss-700" strokeWidth={1.5} aria-hidden="true" />
             <h3 className="mt-3 text-lg font-semibold text-moss-900">Thẻ Member</h3>
             <p className="mt-1 text-sm leading-relaxed text-ink/80">{noOrphan("Nạp một lần — nhận thêm đến 40% giá~trị")}</p>
@@ -177,7 +177,7 @@ export function BentoShowcase() {
           </article>
 
           {/* Ưu đãi */}
-          <article data-reveal="fade-up" className="flex flex-col rounded-3xl bg-burgundy p-6 text-white shadow-[0_24px_50px_-30px_rgba(122,46,46,0.9)] lg:col-start-2 lg:row-start-2">
+          <article className="flex flex-col rounded-sm bg-burgundy p-6 text-white shadow-[0_24px_50px_-30px_rgba(122,46,46,0.9)] lg:col-start-2 lg:row-start-2">
             <Gift className="size-6 text-gold-300" strokeWidth={1.5} aria-hidden="true" />
             <h3 className="mt-3 text-lg font-semibold">{site.hairRemoval.title}</h3>
             <p className="mt-1 text-sm leading-relaxed text-white/85">{noOrphan(site.hairRemoval.offer)}</p>
@@ -191,9 +191,9 @@ export function BentoShowcase() {
           {/* Trước & Sau — cột dọc */}
           <article
             id="ket-qua"
-            data-reveal="fade-up"
+            data-reveal="clip-center"
             data-spotlight
-            className="flex scroll-mt-24 flex-col rounded-3xl bg-beige-50 p-5 ring-1 ring-beige-200 sm:p-6 lg:col-start-3 lg:row-span-2 lg:row-start-1"
+            className="flex scroll-mt-24 flex-col rounded-sm bg-beige-50 p-5 ring-1 ring-beige-200 sm:p-6 lg:col-start-3 lg:row-span-2 lg:row-start-1"
           >
             <h3 className="text-center text-lg font-semibold text-moss-900">Trước & Sau</h3>
             <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-1">
@@ -205,7 +205,7 @@ export function BentoShowcase() {
                   className="group text-left"
                   aria-label={`Phóng to ảnh: ${results[ri].alt}`}
                 >
-                  <span className="relative block aspect-square overflow-hidden rounded-xl">
+                  <span className="relative block aspect-square overflow-hidden rounded-sm">
                     <Image
                       src={results[ri].src}
                       alt={results[ri].alt}
