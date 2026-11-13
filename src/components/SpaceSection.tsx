@@ -51,6 +51,7 @@ export function SpaceSection() {
           <article
             key={s.tag}
             data-reveal="fade-up"
+            data-spotlight
             className="grid gap-3 rounded-[2rem] bg-beige-50 p-3 shadow-[0_24px_60px_-40px_rgba(38,48,32,0.6)] ring-1 ring-beige-200 sm:gap-4 sm:p-4 md:grid-cols-[1fr_1.15fr_1fr]"
           >
             {s.images.map((img, ii) => (

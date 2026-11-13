@@ -31,9 +31,10 @@ export function PricingSection() {
           {p.combos.map((c, i) => (
             <li
               key={c.name}
+              data-spotlight
               className={clsx(
                 "lift-card relative flex flex-col rounded-[2rem] p-7 sm:p-8",
-                "featured" in c && c.featured ? "bg-moss-900 text-beige-100 md:-mt-6 md:mb-6" : "bg-beige-50 text-ink",
+                "featured" in c && c.featured ? "shine-border bg-moss-900 text-beige-100 md:-mt-6 md:mb-6" : "bg-beige-50 text-ink",
               )}
             >
               <p className={clsx("font-serif text-sm tracking-[0.2em]", "featured" in c ? "text-gold-300" : "text-gold-500")}>

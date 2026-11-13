@@ -9,6 +9,7 @@ import { SpaceSection } from "@/components/SpaceSection";
 import { BannerSection } from "@/components/BannerSection";
 import { PromoSection } from "@/components/PromoSection";
 import { BentoShowcase } from "@/components/BentoShowcase";
+import { FeatureMarquee } from "@/components/FeatureMarquee";
 import { Footer } from "@/components/Footer";
 import { FloatingContactBar } from "@/components/FloatingContactBar";
 
@@ -26,6 +27,7 @@ export default function Home() {
         <ServicesSection />
         <PromoSection />
         {/* Bento Editorial: sản phẩm + combo + member + ưu đãi + trước/sau, rồi trải nghiệm zigzag */}
+        <FeatureMarquee />
         <BentoShowcase />
         <SpaceSection />
         <PricingSection />

@@ -44,12 +44,12 @@ export function BentoShowcase() {
         {/* ---------- Hero chia đôi 45/55 ---------- */}
         <div className="grid items-center gap-10 lg:grid-cols-[0.82fr_1fr] lg:gap-12">
           <div>
-            <p className="text-xs font-semibold tracking-[0.3em] text-burgundy uppercase">Sản phẩm & công nghệ</p>
+            <p className="shiny-text text-xs font-semibold tracking-[0.3em] text-burgundy uppercase">Sản phẩm & công nghệ</p>
             <h2 data-reveal="words" className="mt-4 text-4xl leading-[1.1] font-semibold tracking-tight text-moss-900 sm:text-5xl">
               <SplitWords text="Sản~phẩm chuyên~nghiệp, máy~móc hiện~đại" />
             </h2>
             <p data-reveal="fade-up" className="mt-5 max-w-md text-[17px] leading-relaxed text-ink/80">
-              {noOrphan("Sản phẩm Christina, ánh sáng LED và laser triệt lông được dùng trực tiếp trong từng liệu trình tại Yên.")}
+              Sản phẩm Christina, ánh sáng LED và laser triệt lông được dùng <span className="mark-sweep">trực tiếp trong từng liệu{" "}trình</span>{" "}tại{" "}Yên.
             </p>
             <div data-reveal="fade-up" className="mt-8 flex flex-wrap gap-3">
               <a
@@ -80,7 +80,7 @@ export function BentoShowcase() {
             </ul>
           </div>
 
-          <ul data-reveal="stagger" className="grid grid-cols-2 gap-3 sm:gap-4">
+          <ul data-reveal="blur" className="grid grid-cols-2 gap-3 sm:gap-4">
             {tiles.map((t) => {
               const i = Math.max(0, products.findIndex((p) => p.src === t.src));
               return (
@@ -115,11 +115,12 @@ export function BentoShowcase() {
           {/* Combo nổi bật */}
           <article
             data-reveal="fade-up"
-            className="grid overflow-hidden rounded-3xl bg-beige-50 shadow-[0_24px_60px_-36px_rgba(38,48,32,0.6)] ring-1 ring-beige-200 sm:grid-cols-[1.1fr_1fr] lg:col-start-1 lg:row-span-2"
+            data-spotlight
+            className="shine-border grid overflow-hidden rounded-3xl bg-beige-50 shadow-[0_24px_60px_-36px_rgba(38,48,32,0.6)] ring-1 ring-beige-200 sm:grid-cols-[1.1fr_1fr] lg:col-start-1 lg:row-span-2"
           >
             <div className="flex flex-col p-6 sm:p-8">
               <span className="self-start rounded-full bg-burgundy px-3 py-1 text-[11px] font-semibold tracking-[0.15em] text-white uppercase">
-                Combo bán chạy
+                <span className="shiny-text [--shine-base:#fff]">Combo bán chạy</span>
               </span>
               <h3 className="mt-4 text-2xl leading-tight font-semibold tracking-tight text-moss-900 sm:text-3xl">
                 Combo {comboIndex} — {combo.name}
@@ -159,7 +160,7 @@ export function BentoShowcase() {
           </article>
 
           {/* Thẻ Member */}
-          <article data-reveal="fade-up" className="flex flex-col rounded-3xl bg-beige-50 p-6 ring-1 ring-beige-200 lg:col-start-2 lg:row-start-1">
+          <article data-reveal="fade-up" data-spotlight className="flex flex-col rounded-3xl bg-beige-50 p-6 ring-1 ring-beige-200 lg:col-start-2 lg:row-start-1">
             <CreditCard className="size-6 text-moss-700" strokeWidth={1.5} aria-hidden="true" />
             <h3 className="mt-3 text-lg font-semibold text-moss-900">Thẻ Member</h3>
             <p className="mt-1 text-sm leading-relaxed text-ink/80">{noOrphan("Nạp một lần — nhận thêm đến 40% giá~trị")}</p>
@@ -191,6 +192,7 @@ export function BentoShowcase() {
           <article
             id="ket-qua"
             data-reveal="fade-up"
+            data-spotlight
             className="flex scroll-mt-24 flex-col rounded-3xl bg-beige-50 p-5 ring-1 ring-beige-200 sm:p-6 lg:col-start-3 lg:row-span-2 lg:row-start-1"
           >
             <h3 className="text-center text-lg font-semibold text-moss-900">Trước & Sau</h3>

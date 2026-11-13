@@ -54,6 +54,7 @@ export function MotionSystem() {
         // Chưa có motion: chỉ cần hiện lại những gì CSS đang ẩn chờ animation.
         if (!motion) {
           gsap.set("[data-hero], [data-reveal]", { clearProps: "all", visibility: "visible" });
+          q(".mark-sweep").forEach((el) => el.classList.add("is-on"));
           return;
         }
 
@@ -380,6 +381,24 @@ export function MotionSystem() {
                 },
               );
             });
+          });
+        }
+
+        /* ---------- Text Highlighter: quét nét highlight khi cụm từ vào màn hình ---------- */
+        q(".mark-sweep").forEach((el) => {
+          ScrollTrigger.create({ trigger: el, start: "top 85%", once: true, onEnter: () => el.classList.add("is-on") });
+        });
+
+        /* ---------- Spotlight card: quầng sáng theo con trỏ (chỉ chuột) ---------- */
+        if (finePointer) {
+          q("[data-spotlight]").forEach((el) => {
+            const move = (e: PointerEvent) => {
+              const r = el.getBoundingClientRect();
+              el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+              el.style.setProperty("--my", `${e.clientY - r.top}px`);
+            };
+            el.addEventListener("pointermove", move);
+            ctx.add(() => () => el.removeEventListener("pointermove", move));
           });
         }
 

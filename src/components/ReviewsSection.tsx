@@ -28,16 +28,22 @@ export function ReviewsSection() {
   return (
     <section
       id="danh-gia"
-      className="relative z-[2] rounded-t-[3rem] bg-moss-900 px-4 pt-16 pb-36 text-white sm:rounded-t-[6rem] sm:px-6 sm:pt-24 sm:pb-44 lg:rounded-t-[10rem]"
+      className="relative isolate z-[2] overflow-hidden rounded-t-[3rem] bg-moss-900 px-4 pt-16 pb-36 text-white sm:rounded-t-[6rem] sm:px-6 sm:pt-24 sm:pb-44 lg:rounded-t-[10rem]"
     >
+      {/* Aurora: quầng sáng xanh lá / vàng trôi chậm */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <span className="aurora-blob top-[-10%] left-[-5%] size-[28rem] bg-[#6f9a4a]" />
+        <span className="aurora-blob top-[20%] right-[-8%] size-[24rem] bg-[#b8975a]" />
+        <span className="aurora-blob bottom-[5%] left-[30%] size-[26rem] bg-[#3f6b3a]" />
+      </div>
       <div className="mx-auto max-w-6xl">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
           <div className="text-center lg:text-left">
             <span className="inline-block rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.25em] text-beige-100 uppercase ring-1 ring-beige-100/60">
-              Khách hàng nói gì
+              <span className="shiny-text">Khách hàng nói gì</span>
             </span>
             <p data-reveal="fade-up" className="mt-6 text-3xl leading-snug font-semibold tracking-tight text-beige-50 sm:text-[2.6rem] sm:leading-[1.2]">
-              “{noOrphan("Chắc chắn phải gặp Yên mỗi cuối tuần để chữa~lành thôi ạ.")}”
+              “Chắc chắn phải gặp Yên mỗi cuối tuần để <span className="mark-sweep text-white">chữa{" "}lành</span>{" "}thôi{" "}ạ.”
             </p>
             <p className="mt-4 text-sm text-beige-200">
               {reviews[0].author} · {reviews[0].meta}
